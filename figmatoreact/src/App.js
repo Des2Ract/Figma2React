@@ -1,132 +1,268 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 // Extended mapping of Figma tags to React components
 const ComponentMap = {
-  BODY: "div",
-  DIV: "div",
-  HEADER: "header",
-  A: "a",
-  TXT: "span",
-  IFRAME: "iframe",
-  SVG: "svg",
-  BUTTON: "button",
-  SPAN: "span",
-  NAV: "nav",
-  MAIN: "main",
-  ARTICLE: "article",
-  SECTION: "section",
-  FOOTER: "footer",
-  UL: "ul",
-  LI: "li",
-  H1: "h1",
-  H2: "h2",
-  H3: "h3",
-  P: "p",
-  IMG: "img",
-  FORM: "form",
-  INPUT: "input",
-  LABEL: "label",
-  TABLE: "table",
-  TR: "tr",
-  TD: "td",
-  TH: "th",
-  // You can add additional tags as needed
+  HTML: 'html',
+  HEAD: 'head',
+  BODY: 'body',
+  DIV: 'div',
+  HEADER: 'header',
+  FOOTER: 'footer',
+  SECTION: 'section',
+  ARTICLE: 'article',
+  ASIDE: 'aside',
+  NAV: 'nav',
+  MAIN: 'main',
+  UL: 'ul',
+  LI: 'li',
+  H1: 'h1',
+  H2: 'h2',
+  H3: 'h3',
+  H4: 'h4',
+  H5: 'h5',
+  H6: 'h6',
+  P: 'p',
+  A: 'a',
+  IMG: 'img',
+  SVG: 'svg',
+  PATH: 'path',
+  BUTTON: 'button',
+  INPUT: 'input',
+  LABEL: 'label',
+  FORM: 'form',
+  TEXTAREA: 'textarea',
+  SELECT: 'select',
+  OPTION: 'option',
+  IFRAME: 'iframe',
+  VIDEO: 'video',
+  AUDIO: 'audio',
+  CANVAS: 'canvas',
+  FIGURE: 'figure',
+  FIGCAPTION: 'figcaption',
+  DETAILS: 'details',
+  SUMMARY: 'summary',
+  TXT: 'span', // Custom mapping for text nodes
 };
 
-// A helper function to extract and assign attributes based on the tag and node properties.
+// Helper to convert a Figma fill to an rgba() color string
+const getColorFromFill = (fill) => {
+  if (fill && fill.type === 'SOLID' && fill.color) {
+    const { r, g, b } = fill.color;
+    const opacity = fill.opacity !== undefined ? fill.opacity : 1;
+    return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${opacity})`;
+  }
+  return null;
+};
+
+// Helper function to generate inline styles from Figma node data
+const getStyleFromNode = (nodeData, isText = false) => {
+  let style = {
+    position: 'relative',
+    left: nodeData.x || 0,
+    //top: nodeData.y || 0,
+    width: nodeData.width || 'auto',
+    height: nodeData.height || 'auto',
+  };
+
+  // Border radius
+  if (
+    nodeData.topLeftRadius !== undefined ||
+    nodeData.topRightRadius !== undefined ||
+    nodeData.bottomLeftRadius !== undefined ||
+    nodeData.bottomRightRadius !== undefined
+  ) {
+    style.borderTopLeftRadius = nodeData.topLeftRadius || 0;
+    style.borderTopRightRadius = nodeData.topRightRadius || 0;
+    style.borderBottomLeftRadius = nodeData.bottomLeftRadius || 0;
+    style.borderBottomRightRadius = nodeData.bottomRightRadius || 0;
+  }
+
+  // Fill/background handling:
+  if (nodeData.fills && nodeData.fills.length > 0) {
+    if (isText || nodeData.type === 'TEXT' || nodeData.characters) {
+      const textColor = getColorFromFill(nodeData.fills[0]);
+      if (textColor) {
+        style.color = textColor;
+      }
+    } else {
+      const bgColor = getColorFromFill(nodeData.fills[0]);
+      if (bgColor) {
+        style.backgroundColor = bgColor;
+      }
+    }
+  } else if (nodeData.backgrounds && nodeData.backgrounds.length > 0) {
+    const bgFill = nodeData.backgrounds[0];
+    if (bgFill && bgFill.type === 'SOLID' && bgFill.color && bgFill.visible !== false) {
+      style.backgroundColor = `rgba(${Math.round(bgFill.color.r * 255)}, ${Math.round(
+        bgFill.color.g * 255
+      )}, ${Math.round(bgFill.color.b * 255)}, ${bgFill.opacity !== undefined ? bgFill.opacity : 1})`;
+    }
+  }
+
+  // Font properties (for text nodes)
+  if (nodeData.fontSize) {
+    style.fontSize = nodeData.fontSize;
+  }
+  if (nodeData.fontName && nodeData.fontName.family) {
+    style.fontFamily = nodeData.fontName.family;
+  }
+  if (nodeData.fontWeight) {
+    style.fontWeight = nodeData.fontWeight;
+  }
+  if (nodeData.textAlignHorizontal) {
+    style.textAlign = nodeData.textAlignHorizontal.toLowerCase();
+  }
+  if (nodeData.textDecoration) {
+    style.textDecoration = nodeData.textDecoration.toLowerCase();
+  }
+
+  // Stroke handling (borders)
+  if (nodeData.strokes && nodeData.strokes.length > 0) {
+    const strokeColor = getColorFromFill(nodeData.strokes[0]);
+    if (strokeColor) {
+      style.border = `${nodeData.strokeWeight || 1}px solid ${strokeColor}`;
+      if (nodeData.dashPattern && nodeData.dashPattern.length > 0) {
+        style.borderStyle = 'dashed';
+      }
+    }
+  }
+
+  // Effects (e.g., drop shadow)
+  if (nodeData.effects && nodeData.effects.length > 0) {
+    const shadow = nodeData.effects.find((effect) => effect.type === 'DROP_SHADOW');
+    if (shadow && shadow.offset && shadow.radius !== undefined && shadow.color) {
+      const { x: offsetX, y: offsetY} = shadow.offset;
+      const blur = shadow.radius;
+      const shadowColor = getColorFromFill(shadow.color);
+      style.boxShadow = `${offsetX}px ${offsetY}px ${blur}px ${shadowColor}`;
+    }
+  }
+
+  return style;
+};
+
+// Helper function to extract extra attributes based on the tag and node properties
 const getAttributesForNode = (tag, nodeData) => {
   const attributes = {};
   switch (tag) {
-    case "A":
+    case 'A':
       if (nodeData.linkUnfurlData?.url) {
         attributes.href = nodeData.linkUnfurlData.url;
       }
       break;
-    case "IMG":
+    case 'IMG':
       if (nodeData.fills && nodeData.fills[0]?.url) {
         attributes.src = nodeData.fills[0].url;
+      } else if (nodeData.backgrounds && nodeData.backgrounds[0]?.url) {
+        attributes.src = nodeData.backgrounds[0].url;
       }
-      attributes.alt = nodeData.alt || "";
+      attributes.alt = nodeData.alt || '';
       break;
-    case "IFRAME":
+    case 'IFRAME':
       if (nodeData.src) {
         attributes.src = nodeData.src;
       }
       break;
-    case "INPUT":
-      attributes.placeholder = nodeData.placeholder || "";
-      attributes.value = nodeData.value || "";
-      attributes.type = nodeData.inputType || "text";
+    case 'INPUT':
+      attributes.placeholder = nodeData.placeholder || '';
+      attributes.value = nodeData.value || '';
+      attributes.type = nodeData.inputType || 'text';
+      if (nodeData.checked !== undefined) {
+        attributes.checked = nodeData.checked;
+      }
       break;
-    case "FORM":
-      attributes.action = nodeData.action || "";
-      attributes.method = nodeData.method || "get";
+    case 'FORM':
+      attributes.action = nodeData.action || '';
+      attributes.method = nodeData.method || 'get';
+      break;
+    case 'VIDEO':
+      if (nodeData.src) {
+        attributes.src = nodeData.src;
+      }
+      attributes.controls = true;
+      break;
+    case 'AUDIO':
+      if (nodeData.src) {
+        attributes.src = nodeData.src;
+      }
+      attributes.controls = true;
       break;
     default:
-      // Other tags may not require special attributes.
       break;
   }
   return attributes;
 };
 
-// Recursive component to render the Figma JSON tree.
-const FigmaRenderer = ({ node, offsetX = 0, offsetY = 0 }) => {
+// Define self-closing tags that don't wrap children
+const selfClosingTags = ['IMG', 'INPUT', 'META', 'LINK', 'BR'];
+
+// Recursive component that renders the Figma JSON tree.
+const FigmaRenderer = ({ node, parentOffsetX = 0, parentOffsetY = 0, parentWidth, parentHeight }) => {
   if (!node) return null;
-
   const { tag, node: nodeData, children = [] } = node;
-  const Component = ComponentMap[tag] || "div";
+  const Component = ComponentMap[tag] || 'div';
 
-  // Compute the element's position relative to the parent's top-left
-  const left = (nodeData.x || 0) - offsetX;
-  const top = (nodeData.y || 0) - offsetY;
+  // Calculate position relative to the parent's offset (using Figma's coordinates)
+  const relativeX = (nodeData.x || 0) - parentOffsetX;
+  const relativeY = (nodeData.y || 0) - parentOffsetY;
 
-  // Map Figma node properties to inline styles.
-  const style = {
-    position: "absolute",
-    left,
-    top,
-    width: nodeData.width || "auto",
-    height: nodeData.height || "auto",
-    backgroundColor:
-      nodeData.fills && nodeData.fills[0] && nodeData.fills[0].color
-        ? `rgba(${nodeData.fills[0].color.r * 255}, ${nodeData.fills[0].color.g * 255}, ${nodeData.fills[0].color.b * 255}, ${nodeData.fills[0].opacity || 1})`
-        : "transparent",
-    fontSize: nodeData.fontSize,
-    textAlign: nodeData.textAlignHorizontal
-      ? nodeData.textAlignHorizontal.toLowerCase()
-      : undefined,
-    textDecoration: nodeData.textDecoration
-      ? nodeData.textDecoration.toLowerCase()
-      : undefined,
-    // Add additional style mappings (borders, borderRadius, etc.) as needed.
-  };
+  // Determine if this node should be treated as a text node
+  const isText = tag === 'TXT' || nodeData.type === 'TEXT' || !!nodeData.characters;
+  let style = getStyleFromNode(nodeData, isText);
 
-  // Get extra attributes based on the tag.
+  // Always convert left & top values to percentages relative to the parent.
+  if (parentWidth) {
+    style.left = `${(relativeX / parentWidth) * 100}%`;
+  }
+  if (parentHeight) {
+    //style.top = `${(relativeY / parentHeight) * 100}%`;
+  }
+
+  // For elements that need a fixed aspect ratio (e.g. images and videos),
+  // set the width as a percentage and let the height be auto while enforcing
+  // the original aspect ratio. For all other elements, both width and height
+  // are computed as percentages relative to the parent.
+  if (['IMG', 'VIDEO'].includes(tag)) {
+    if (parentWidth && nodeData.width) {
+      style.width = `${(nodeData.width / parentWidth) * 100}%`;
+    }
+    style.height = 'auto';
+    if (nodeData.width && nodeData.height) {
+      style.aspectRatio = nodeData.width / nodeData.height;
+    }
+  } else {
+    if (parentWidth && nodeData.width) {
+      style.width = `${(nodeData.width / parentWidth) * 100}%`;
+    }
+    if (parentHeight && nodeData.height) {
+      style.height = `${(nodeData.height / parentHeight) * 100}%`;
+    }
+  }
+
   const attributes = getAttributesForNode(tag, nodeData);
 
-  // Define self-closing tags that do not wrap children.
-  const selfClosingTags = ["IMG", "INPUT"];
+  // Render self-closing tags immediately
   if (selfClosingTags.includes(tag)) {
     return <Component style={style} {...attributes} />;
   }
 
   return (
     <Component style={style} {...attributes}>
-      {/* For text-based nodes, render the characters */}
-      {nodeData.characters && typeof nodeData.characters === "string"
+      {/* Render text if available */}
+      {nodeData.characters && typeof nodeData.characters === 'string'
         ? nodeData.characters
         : null}
-      {/* Render children recursively */}
-      {children &&
-        children.map((child, index) => (
-          <FigmaRenderer
-            key={index}
-            node={child}
-            // Pass the current node's absolute x and y as the offset for its children
-            offsetX={nodeData.x || 0}
-            offsetY={nodeData.y || 0}
-          />
-        ))}
+      {/* Recursively render children, passing the current node's position and dimensions */}
+      {children.map((child, index) => (
+        <FigmaRenderer
+          key={index}
+          node={child}
+          parentOffsetX={nodeData.x || 0}
+          parentOffsetY={nodeData.y || 0}
+          parentWidth={nodeData.width}
+          parentHeight={nodeData.height}
+        />
+      ))}
     </Component>
   );
 };
@@ -135,30 +271,36 @@ const App = () => {
   const [figmaJson, setFigmaJson] = useState(null);
 
   useEffect(() => {
-    // Fetch the JSON file from the public folder.
-    fetch("/figmaData.json")
+    fetch('/figmaData.json')
       .then((response) => response.json())
       .then((data) => setFigmaJson(data))
-      .catch((error) => console.error("Error loading JSON:", error));
+      .catch((error) => console.error('Error loading JSON:', error));
   }, []);
 
-  // If the root node (typically a frame) specifies a width and height,
-  // we use it to size our main container.
+  // Use the absolute dimensions from the root node for the container.
   const containerStyle =
-    figmaJson &&
-    figmaJson.node &&
-    figmaJson.node.width &&
-    figmaJson.node.height
+    figmaJson && figmaJson.node && figmaJson.node.width && figmaJson.node.height
       ? {
-          position: "relative",
+          position: 'relative',
           width: figmaJson.node.width,
           height: figmaJson.node.height,
+          // Optionally, add responsiveness:
+          maxWidth: '100%',
+          height: 'auto',
         }
-      : { position: "relative" };
+      : { position: 'relative' };
 
   return (
     <div style={containerStyle}>
-      {figmaJson ? <FigmaRenderer node={figmaJson} /> : <p>Loading...</p>}
+      {figmaJson ? (
+        <FigmaRenderer
+          node={figmaJson}
+          parentWidth={figmaJson.node.width}
+          parentHeight={figmaJson.node.height}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };
