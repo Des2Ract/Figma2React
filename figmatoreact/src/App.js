@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-// Extended mapping of Figma tags to React components
+// Global CSS reset for a responsive layout
+const GlobalStyles = () => (
+  <style>
+    {`
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+    `}
+  </style>
+);
+
+// Mapping from Figma tags to HTML elements
 const ComponentMap = {
   HTML: 'html',
   HEAD: 'head',
-  BODY: 'body',
+  BODY: 'body', // We'll skip rendering the root BODY node.
   DIV: 'div',
   HEADER: 'header',
   FOOTER: 'footer',
@@ -44,7 +58,7 @@ const ComponentMap = {
   TXT: 'span', // Custom mapping for text nodes
 };
 
-// Helper to convert a Figma fill to an rgba() color string
+// Convert a Figma fill object to an rgba() color string.
 const getColorFromFill = (fill) => {
   if (fill && fill.type === 'SOLID' && fill.color) {
     const { r, g, b } = fill.color;
@@ -54,14 +68,15 @@ const getColorFromFill = (fill) => {
   return null;
 };
 
-// Helper function to generate inline styles from Figma node data
+// Generate inline styles from Figma node data.
 const getStyleFromNode = (nodeData, isText = false) => {
   let style = {
-    position: 'relative',
+    position: 'absolute',
     left: nodeData.x || 0,
-    //top: nodeData.y || 0,
+    top: nodeData.y || 0,
     width: nodeData.width || 'auto',
     height: nodeData.height || 'auto',
+    boxSizing: 'border-box',
   };
 
   // Border radius
@@ -77,7 +92,7 @@ const getStyleFromNode = (nodeData, isText = false) => {
     style.borderBottomRightRadius = nodeData.bottomRightRadius || 0;
   }
 
-  // Fill/background handling:
+  // Fills / backgrounds
   if (nodeData.fills && nodeData.fills.length > 0) {
     if (isText || nodeData.type === 'TEXT' || nodeData.characters) {
       const textColor = getColorFromFill(nodeData.fills[0]);
@@ -99,24 +114,14 @@ const getStyleFromNode = (nodeData, isText = false) => {
     }
   }
 
-  // Font properties (for text nodes)
-  if (nodeData.fontSize) {
-    style.fontSize = nodeData.fontSize;
-  }
-  if (nodeData.fontName && nodeData.fontName.family) {
-    style.fontFamily = nodeData.fontName.family;
-  }
-  if (nodeData.fontWeight) {
-    style.fontWeight = nodeData.fontWeight;
-  }
-  if (nodeData.textAlignHorizontal) {
-    style.textAlign = nodeData.textAlignHorizontal.toLowerCase();
-  }
-  if (nodeData.textDecoration) {
-    style.textDecoration = nodeData.textDecoration.toLowerCase();
-  }
+  // Text properties
+  if (nodeData.fontSize) style.fontSize = nodeData.fontSize;
+  if (nodeData.fontName && nodeData.fontName.family) style.fontFamily = nodeData.fontName.family;
+  if (nodeData.fontWeight) style.fontWeight = nodeData.fontWeight;
+  if (nodeData.textAlignHorizontal) style.textAlign = nodeData.textAlignHorizontal.toLowerCase();
+  if (nodeData.textDecoration) style.textDecoration = nodeData.textDecoration.toLowerCase();
 
-  // Stroke handling (borders)
+  // Stroke (borders)
   if (nodeData.strokes && nodeData.strokes.length > 0) {
     const strokeColor = getColorFromFill(nodeData.strokes[0]);
     if (strokeColor) {
@@ -131,7 +136,7 @@ const getStyleFromNode = (nodeData, isText = false) => {
   if (nodeData.effects && nodeData.effects.length > 0) {
     const shadow = nodeData.effects.find((effect) => effect.type === 'DROP_SHADOW');
     if (shadow && shadow.offset && shadow.radius !== undefined && shadow.color) {
-      const { x: offsetX, y: offsetY} = shadow.offset;
+      const { x: offsetX, y: offsetY } = shadow.offset;
       const blur = shadow.radius;
       const shadowColor = getColorFromFill(shadow.color);
       style.boxShadow = `${offsetX}px ${offsetY}px ${blur}px ${shadowColor}`;
@@ -141,14 +146,12 @@ const getStyleFromNode = (nodeData, isText = false) => {
   return style;
 };
 
-// Helper function to extract extra attributes based on the tag and node properties
+// Extract extra HTML attributes based on the Figma node data.
 const getAttributesForNode = (tag, nodeData) => {
   const attributes = {};
   switch (tag) {
     case 'A':
-      if (nodeData.linkUnfurlData?.url) {
-        attributes.href = nodeData.linkUnfurlData.url;
-      }
+      if (nodeData.linkUnfurlData?.url) attributes.href = nodeData.linkUnfurlData.url;
       break;
     case 'IMG':
       if (nodeData.fills && nodeData.fills[0]?.url) {
@@ -159,32 +162,30 @@ const getAttributesForNode = (tag, nodeData) => {
       attributes.alt = nodeData.alt || '';
       break;
     case 'IFRAME':
-      if (nodeData.src) {
-        attributes.src = nodeData.src;
-      }
+      if (nodeData.src) attributes.src = nodeData.src;
       break;
     case 'INPUT':
       attributes.placeholder = nodeData.placeholder || '';
       attributes.value = nodeData.value || '';
       attributes.type = nodeData.inputType || 'text';
-      if (nodeData.checked !== undefined) {
-        attributes.checked = nodeData.checked;
-      }
+      if (nodeData.checked !== undefined) attributes.checked = nodeData.checked;
       break;
     case 'FORM':
       attributes.action = nodeData.action || '';
       attributes.method = nodeData.method || 'get';
       break;
-    case 'VIDEO':
-      if (nodeData.src) {
-        attributes.src = nodeData.src;
-      }
-      attributes.controls = true;
-      break;
+      case "VIDEO":
+        if (
+          nodeData.fills &&
+          nodeData.fills.length > 0 &&
+          nodeData.fills[0].url
+        ) {
+          attributes.src = nodeData.fills[0].url;
+        }
+        attributes.controls = true;
+        break;
     case 'AUDIO':
-      if (nodeData.src) {
-        attributes.src = nodeData.src;
-      }
+      if (nodeData.src) attributes.src = nodeData.src;
       attributes.controls = true;
       break;
     default:
@@ -193,74 +194,60 @@ const getAttributesForNode = (tag, nodeData) => {
   return attributes;
 };
 
-// Define self-closing tags that don't wrap children
 const selfClosingTags = ['IMG', 'INPUT', 'META', 'LINK', 'BR'];
 
-// Recursive component that renders the Figma JSON tree.
-const FigmaRenderer = ({ node, parentOffsetX = 0, parentOffsetY = 0, parentWidth, parentHeight }) => {
+// Recursive renderer for the Figma JSON tree.
+// If the root node is a "BODY" node, we skip rendering it to avoid injecting fixed dimensions.
+const FigmaRenderer = ({ node, parentOffsetX = 0, parentOffsetY = 0 }) => {
   if (!node) return null;
   const { tag, node: nodeData, children = [] } = node;
+
+  // Skip the root BODY node—render its children directly.
+  if (parentOffsetX === 0 && parentOffsetY === 0 && tag === 'BODY') {
+    return children.map((child, index) => (
+      <FigmaRenderer key={index} node={child} parentOffsetX={0} parentOffsetY={0} />
+    ));
+  }
+
   const Component = ComponentMap[tag] || 'div';
 
-  // Calculate position relative to the parent's offset (using Figma's coordinates)
+  // Compute position relative to the parent's offset.
   const relativeX = (nodeData.x || 0) - parentOffsetX;
   const relativeY = (nodeData.y || 0) - parentOffsetY;
 
-  // Determine if this node should be treated as a text node
   const isText = tag === 'TXT' || nodeData.type === 'TEXT' || !!nodeData.characters;
   let style = getStyleFromNode(nodeData, isText);
 
-  // Always convert left & top values to percentages relative to the parent.
-  if (parentWidth) {
-    style.left = `${(relativeX / parentWidth) * 100}%`;
-  }
-  if (parentHeight) {
-    //style.top = `${(relativeY / parentHeight) * 100}%`;
-  }
-
-  // For elements that need a fixed aspect ratio (e.g. images and videos),
-  // set the width as a percentage and let the height be auto while enforcing
-  // the original aspect ratio. For all other elements, both width and height
-  // are computed as percentages relative to the parent.
-  if (['IMG', 'VIDEO'].includes(tag)) {
-    if (parentWidth && nodeData.width) {
-      style.width = `${(nodeData.width / parentWidth) * 100}%`;
-    }
-    style.height = 'auto';
-    if (nodeData.width && nodeData.height) {
-      style.aspectRatio = nodeData.width / nodeData.height;
-    }
-  } else {
-    if (parentWidth && nodeData.width) {
-      style.width = `${(nodeData.width / parentWidth) * 100}%`;
-    }
-    if (parentHeight && nodeData.height) {
-      style.height = `${(nodeData.height / parentHeight) * 100}%`;
-    }
-  }
+  // Ensure integer pixel values.
+  style.left = Math.round(relativeX);
+  style.top = Math.round(relativeY);
+  style.width = Math.round(nodeData.width);
+  style.height = Math.round(nodeData.height);
 
   const attributes = getAttributesForNode(tag, nodeData);
 
-  // Render self-closing tags immediately
+  // Special handling for SVG nodes: render using dangerouslySetInnerHTML.
+  if (tag === 'SVG' && nodeData.svg) {
+    return (
+      <Component style={style} {...attributes} dangerouslySetInnerHTML={{ __html: nodeData.svg }} />
+    );
+  }
+
   if (selfClosingTags.includes(tag)) {
     return <Component style={style} {...attributes} />;
   }
 
   return (
     <Component style={style} {...attributes}>
-      {/* Render text if available */}
       {nodeData.characters && typeof nodeData.characters === 'string'
         ? nodeData.characters
         : null}
-      {/* Recursively render children, passing the current node's position and dimensions */}
       {children.map((child, index) => (
         <FigmaRenderer
           key={index}
           node={child}
           parentOffsetX={nodeData.x || 0}
           parentOffsetY={nodeData.y || 0}
-          parentWidth={nodeData.width}
-          parentHeight={nodeData.height}
         />
       ))}
     </Component>
@@ -269,6 +256,8 @@ const FigmaRenderer = ({ node, parentOffsetX = 0, parentOffsetY = 0, parentWidth
 
 const App = () => {
   const [figmaJson, setFigmaJson] = useState(null);
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     fetch('/figmaData.json')
@@ -277,31 +266,54 @@ const App = () => {
       .catch((error) => console.error('Error loading JSON:', error));
   }, []);
 
-  // Use the absolute dimensions from the root node for the container.
-  const containerStyle =
-    figmaJson && figmaJson.node && figmaJson.node.width && figmaJson.node.height
-      ? {
-          position: 'relative',
-          width: figmaJson.node.width,
-          height: figmaJson.node.height,
-          // Optionally, add responsiveness:
-          maxWidth: '100%',
-          height: 'auto',
-        }
-      : { position: 'relative' };
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current && figmaJson && figmaJson.node && figmaJson.node.width) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const designWidth = figmaJson.node.width;
+        setScale(containerWidth / designWidth);
+      }
+    };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, [figmaJson]);
+
+  if (!figmaJson) {
+    return <p>Loading...</p>;
+  }
+
+  const designWidth = figmaJson.node.width;
+  const designHeight = figmaJson.node.height;
+
+  // Outer container: full width, with padding-bottom for aspect ratio.
+  const containerStyle = {
+    position: 'relative',
+    width: '100%',
+    paddingBottom: `${(designHeight / designWidth) * 100}%`,
+    overflow: 'hidden',
+  };
+
+  // Inner wrapper: fixed dimensions, scaled responsively.
+  const innerWrapperStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: designWidth,
+    height: designHeight,
+    transformOrigin: 'top left',
+    transform: `scale(${scale})`,
+  };
 
   return (
-    <div style={containerStyle}>
-      {figmaJson ? (
-        <FigmaRenderer
-          node={figmaJson}
-          parentWidth={figmaJson.node.width}
-          parentHeight={figmaJson.node.height}
-        />
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <>
+      <GlobalStyles />
+      <div ref={containerRef} style={containerStyle}>
+        <div style={innerWrapperStyle}>
+          <FigmaRenderer node={figmaJson} parentOffsetX={0} parentOffsetY={0} />
+        </div>
+      </div>
+    </>
   );
 };
 
