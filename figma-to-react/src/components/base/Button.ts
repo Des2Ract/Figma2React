@@ -1,25 +1,141 @@
 import { BaseComponent } from "./BaseComponent";
 import { ComponentNode, ShapeNode } from "../../types/nodeTypes";
+import { CSSGenerator } from "../../utils/cssGenerator";
 import {
   parseBackgroundStyles,
   parseStrokeStyles,
 } from "../../utils/styleParser";
 
 export class Button extends BaseComponent {
-  constructor(data: ComponentNode) {
+  private wrapperStyles: Record<string, string> = {};
+  private useWrapper: boolean = true;
+  private wrapperClassName: string = "";
+  private parentAlignmentThreshold: number = 10; // Threshold in pixels to determine "small margin"
+
+  constructor(data: ComponentNode, cssGenerator: CSSGenerator) {
     super(data);
+    // Initialize with default wrapper styles
+    this.wrapperStyles = {
+      display: "flex",
+      overflow: "hidden",
+    };
+    this.wrapperClassName = this.className + "-wrapper";
+
+    // Apply parent-relative alignment on initialization
+    this.applyParentRelativeAlignment();
+
+    // Register wrapper styles with CSS generator
+    cssGenerator.styles.set(this.wrapperClassName, this.wrapperStyles);
+  }
+
+  // Enable wrapper and optionally set a custom wrapper class name
+  enableWrapper(wrapperClassName?: string): Button {
+    this.useWrapper = true;
+    if (wrapperClassName) {
+      this.wrapperClassName = wrapperClassName;
+    }
+    return this;
+  }
+
+  // Disable wrapper
+  disableWrapper(): Button {
+    this.useWrapper = false;
+    return this;
+  }
+
+  // Set wrapper-specific styles
+  setWrapperStyles(styles: Record<string, string>): Button {
+    this.wrapperStyles = {
+      ...this.wrapperStyles,
+      ...styles,
+    };
+    return this;
+  }
+
+  // Get wrapper styles
+  getWrapperStyles(): Record<string, string> {
+    return { ...this.wrapperStyles };
+  }
+
+  // Set the threshold for determining when margins are "small" enough for center alignment
+  setAlignmentThreshold(pixels: number): Button {
+    this.parentAlignmentThreshold = pixels;
+    return this;
+  }
+
+  // Apply parent-relative alignment
+  applyParentRelativeAlignment(): Button {
+    const node = this.data.node as ShapeNode;
+    // Skip if there's no parent or no wrapper
+    if (
+      this.data.node.parentX == undefined ||
+      this.data.node.parentWidth == undefined
+    ) {
+      return this;
+    }
+
+    // Calculate centers
+    const nodeCenterX = node.x + node.width / 2;
+    const parentCenterX =
+      this.data.node.parentX + this.data.node.parentWidth / 2;
+
+    // Calculate horizontal offset from parent center
+    const centerOffset = Math.abs(nodeCenterX - parentCenterX);
+
+    // If centers are close enough, apply center alignment
+    if (centerOffset <= this.parentAlignmentThreshold) {
+      this.wrapperStyles = {
+        ...this.wrapperStyles,
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+      };
+    } else {
+      // Determine if the node is more to the left, right, or needs specific positioning
+      if (nodeCenterX < parentCenterX) {
+        // Node is more to the left
+        this.wrapperStyles = {
+          ...this.wrapperStyles,
+          display: "flex",
+          justifyContent: "flex-start",
+          width: "100%",
+        };
+      } else {
+        // Node is more to the right
+        this.wrapperStyles = {
+          ...this.wrapperStyles,
+          display: "flex",
+          justifyContent: "flex-end",
+          width: "100%",
+        };
+      }
+    }
+
+    return this;
   }
 
   toReact(childrenCode: string = ""): string {
-    return `<button className="${this.className}" type="button">${childrenCode}</button>`;
+    if (this.useWrapper) {
+      // Create the inner button with original className
+      const innerButton = `<button className="${this.className}" type="button">${childrenCode}</button>`;
+
+      // Create the wrapper div containing the inner button
+      return `<div className="${this.wrapperClassName}">${innerButton}</div>`;
+    } else {
+      // Return standard button without wrapper
+      return `<button className="${this.className}" type="button">${childrenCode}</button>`;
+    }
   }
 
   getStyles(): Record<string, string> {
     const commonStyles = this.getCommonStyles();
 
-    commonStyles.position = "undefined";
-    commonStyles.left = "undefined";
-    commonStyles.top = "undefined";
+    // Remove positioning styles as they'll be handled by the wrapper
+    if (this.useWrapper) {
+      delete commonStyles.position;
+      delete commonStyles.left;
+      delete commonStyles.top;
+    }
 
     const node = this.data.node as ShapeNode;
 
@@ -37,9 +153,6 @@ export class Button extends BaseComponent {
     // Parse border radius
     const borderRadius = this.getBorderRadius(node);
 
-    // Calculate margins based on x-center of node and parent
-    const marginStyles = this.calculateXCenterMargin(node);
-
     // Additional button-specific styles
     const buttonStyles = {
       cursor: "pointer",
@@ -49,7 +162,6 @@ export class Button extends BaseComponent {
       justifyContent: "center",
       padding: "0",
       // Only add default border if no border styles are provided
-      // We're now handling border separately, so remove the default border setting
       ...(!Object.keys(enhancedBorderStyles).length &&
       !Object.keys(borderStyles).length
         ? { border: "1px solid #ccc" }
@@ -65,9 +177,23 @@ export class Button extends BaseComponent {
       ...borderStyles,
       ...enhancedBorderStyles,
       ...borderRadius,
-      ...marginStyles,
       ...buttonStyles,
     };
+  }
+
+  // Generate CSS classes for both the main button and wrapper (if enabled)
+  generateCSS(): Record<string, Record<string, string>> {
+    const result: Record<string, Record<string, string>> = {};
+
+    // Add main button styles
+    result[`.${this.className}`] = this.getStyles();
+
+    // Add wrapper styles if wrapper is enabled
+    if (this.useWrapper) {
+      result[`.${this.wrapperClassName}`] = this.getWrapperStyles();
+    }
+
+    return result;
   }
 
   private getEnhancedBorderStyles(strokes: any[]): Record<string, string> {
@@ -116,39 +242,25 @@ export class Button extends BaseComponent {
       borderBottomRightRadius: `${node.bottomRightRadius || 0}px`,
     };
   }
+}
 
-  private calculateXCenterMargin(node: ShapeNode): Record<string, string> {
-    // Check if we have both node and parent dimensions
-    if (!node || !this.data.node.parentWidth || !this.data.node.parentX) {
-      return {};
-    }
+// Helper function to create a button with wrapper, similar to createContentDiv
+export function createWrappedButton(
+  data: ComponentNode,
+  cssGenerator: CSSGenerator,
+  wrapperClassName?: string
+): Button {
+  const button = new Button(data, cssGenerator);
 
-    // Calculate x-center positions
-    const nodeXCenter = node.x + node.width / 2;
-    const parentXCenter =
-      this.data.node.parentX + this.data.node.parentWidth / 2;
+  // Enable wrapper with an optional specific class name
+  button.enableWrapper(wrapperClassName || "button-wrapper");
 
-    // Calculate the difference between centers
-    const xDifference = nodeXCenter - parentXCenter;
+  // Set some common wrapper styles
+  button.setWrapperStyles({
+    maxWidth: "100%",
+    boxSizing: "border-box",
+    transition: "all 0.3s ease",
+  });
 
-    if (Math.abs(xDifference) < 1) {
-      // If the centers are very close, center the button
-      return {
-        marginLeft: "auto",
-        marginRight: "auto",
-      };
-    } else if (xDifference > 0) {
-      // Node is to the right of parent center - add left margin
-      return {
-        marginLeft: `${xDifference}px`,
-        marginRight: "0",
-      };
-    } else {
-      // Node is to the left of parent center - add right margin
-      return {
-        marginLeft: "0",
-        marginRight: `${Math.abs(xDifference)}px`,
-      };
-    }
-  }
+  return button;
 }

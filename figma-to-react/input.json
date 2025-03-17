@@ -1,662 +1,2931 @@
 {
   "tag": "DIV",
+  "name": "",
   "node": {
     "type": "FRAME",
-    "flexDirection": "column",
-    "x": 0.0,
-    "y": 0.0,
-    "width": 668.0,
-    "height": 579.0,
+    "x": 0,
+    "y": 0,
+    "width": 1536.0,
+    "height": 1042.0,
     "fills": [
       {
         "blendMode": "NORMAL",
         "type": "SOLID",
         "color": {
-          "r": 0.95,
-          "g": 0.95,
-          "b": 0.95,
-          "a": 1.0
-        }
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "imageRef": null
+      }
+    ],
+    "strokes": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "weight": 0
       }
     ],
     "topLeftRadius": 0,
     "topRightRadius": 0,
     "bottomLeftRadius": 0,
-    "bottomRightRadius": 0
+    "bottomRightRadius": 0,
+    "StrokeWeight": 0,
+    "flexDirection": "column",
+    "characters": "",
+    "fontSize": 15.0,
+    "fontName": {
+      "family": "Permanent Marker",
+      "style": "Regular"
+    }
   },
   "children": [
     {
-      "tag": "IMG",
+      "tag": "DIV",
+      "name": "Sign up",
       "node": {
-        "type": "RECTANGLE",
-        "x": 0.0,
-        "y": 0.0,
-        "width": 668.0,
-        "height": 579.0,
+        "type": "FRAME",
+        "x": 0,
+        "y": 0,
+        "width": 1536.0,
+        "height": 1042.0,
         "fills": [
           {
             "blendMode": "NORMAL",
             "type": "SOLID",
             "color": {
-              "r": 0.8582960963249207,
-              "g": 0.8419474363327026,
-              "b": 0.8419474363327026,
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
               "a": 1.0
-            }
-          },
+            },
+            "imageRef": null
+          }
+        ],
+        "strokes": [
           {
-            "opacity": 0.4099999964237213,
             "blendMode": "NORMAL",
-            "type": "IMAGE",
-            "scaleMode": "FILL",
-            "imageRef": "https://i.pinimg.com/736x/32/2a/86/322a8676d4cbf0794be7de0d97a3f837.jpg"
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "weight": 0
           }
         ],
         "topLeftRadius": 0,
         "topRightRadius": 0,
         "bottomLeftRadius": 0,
         "bottomRightRadius": 0,
-        "strokes": []
-      },
-      "children": []
-    },
-    {
-      "tag": "NAVBAR",
-      "node": {
+        "StrokeWeight": 0,
         "flexDirection": "row",
-
-        "type": "RECTANGLE",
-        "x": 0.0,
-        "y": 0.0,
-        "width": 668.0,
-        "height": 49.0,
-        "fills": [
-          {
-            "blendMode": "NORMAL",
-            "type": "SOLID",
-            "color": {
-              "r": 0.0,
-              "g": 0.0,
-              "b": 0.0,
-              "a": 1.0
-            }
-          }
-        ],
-        "topLeftRadius": 0,
-        "topRightRadius": 0,
-        "bottomLeftRadius": 0,
-        "bottomRightRadius": 0,
-        "strokes": []
+        "characters": "",
+        "fontSize": 15.0,
+        "fontName": {
+          "family": "Permanent Marker",
+          "style": "Regular"
+        }
       },
       "children": [
         {
-          "tag": "P",
+          "tag": "DIV",
+          "name": "Group 5",
           "node": {
-            "type": "TEXT",
-            "x": 28.0,
-            "y": 10.0,
-            "width": 100.0,
-            "height": 29.0,
-            "characters": "DES2RACT",
-            "fontSize": 20.0,
-            "fontName": {
-              "family": "Permanent Marker",
-              "style": "Regular"
-            },
-            "fills": [
-              {
-                "blendMode": "NORMAL",
-                "type": "SOLID",
-                "color": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
-              }
-            ],
-            "textAlignHorizontal": "LEFT"
-          },
-          "children": []
-        },
-        {
-          "tag": "P",
-          "node": {
-            "type": "TEXT",
-            "x": 221.0,
-            "y": 13.0,
-            "width": 43.0,
-            "height": 23.0,
-            "characters": "Home",
-            "fontSize": 16.0,
-            "fontName": {
-              "family": "Permanent Marker",
-              "style": "Regular"
-            },
-            "fills": [
-              {
-                "blendMode": "NORMAL",
-                "type": "SOLID",
-                "color": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
-              }
-            ],
-            "textAlignHorizontal": "LEFT"
-          },
-          "children": []
-        },
-        {
-          "tag": "P",
-          "node": {
-            "type": "TEXT",
-            "x": 297.0,
-            "y": 13.0,
-            "width": 63.0,
-            "height": 23.0,
-            "characters": "Services",
-            "fontSize": 16.0,
-            "fontName": {
-              "family": "Permanent Marker",
-              "style": "Regular"
-            },
-            "fills": [
-              {
-                "blendMode": "NORMAL",
-                "type": "SOLID",
-                "color": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
-              }
-            ],
-            "textAlignHorizontal": "LEFT"
-          },
-          "children": []
-        },
-        {
-          "tag": "P",
-          "node": {
-            "type": "TEXT",
-            "x": 393.0,
-            "y": 13.0,
-            "width": 86.0,
-            "height": 23.0,
-            "characters": "Contact Us",
-            "fontSize": 16.0,
-            "fontName": {
-              "family": "Permanent Marker",
-              "style": "Regular"
-            },
-            "fills": [
-              {
-                "blendMode": "NORMAL",
-                "type": "SOLID",
-                "color": { "r": 1.0, "g": 1.0, "b": 1.0, "a": 1.0 }
-              }
-            ],
-            "textAlignHorizontal": "LEFT"
-          },
-          "children": []
-        },
-        {
-          "tag": "BUTTON",
-          "node": {
-            "type": "RECTANGLE",
-            "x": 545.0,
-            "y": 10.0,
-            "width": 110.0,
-            "height": 29.0,
+            "type": "GROUP",
+            "x": 175,
+            "y": 202,
+            "width": 404.0,
+            "height": 638.0,
             "fills": [
               {
                 "blendMode": "NORMAL",
                 "type": "SOLID",
                 "color": {
-                  "r": 1.0,
-                  "g": 1.0,
-                  "b": 1.0,
-                  "a": 1.0
-                }
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "imageRef": null
               }
             ],
-            "topLeftRadius": 15.0,
-            "topRightRadius": 15.0,
-            "bottomLeftRadius": 15.0,
-            "bottomRightRadius": 15.0,
             "strokes": [
               {
                 "blendMode": "NORMAL",
                 "type": "SOLID",
                 "color": {
-                  "r": 0.0,
-                  "g": 0.0,
-                  "b": 0.0,
-                  "a": 1.0
-                }
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "weight": 0
               }
-            ]
-          },
-          "children": [
-            {
-              "tag": "P",
-              "node": {
-                "type": "TEXT",
-                "x": 566.0,
-                "y": 16.0,
-                "width": 68.0191650390625,
-                "height": 35.432308197021484,
-                "characters": "Sign In",
-                "fontSize": 15.0,
-                "fontName": {
-                  "family": "Kode Mono",
-                  "style": "SemiBold"
-                },
-                "fills": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": { "r": 0.0, "g": 0.0, "b": 0.0, "a": 1.0 }
-                  }
-                ],
-                "textAlignHorizontal": "LEFT"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "tag": "P",
-      "node": {
-        "type": "TEXT",
-        "x": 50.0,
-        "y": 72.0,
-        "width": 127.0,
-        "height": 29.0,
-        "characters": "AOZ Website",
-        "fontSize": 20.0,
-        "fontName": {
-          "family": "Permanent Marker",
-          "style": "Regular"
-        },
-        "textAlignHorizontal": "LEFT"
-      },
-      "children": []
-    },
-    {
-      "tag": "HR",
-      "node": {
-        "type": "LINE",
-        "x": 28.0,
-        "y": 98.0,
-        "width": 176.0,
-        "height": 0.0
-      },
-      "children": []
-    },
-    {
-      "tag": "DIV",
-      "node": {
-        "flexDirection": "column",
-
-        "type": "FRAME",
-        "x": 128.0,
-        "y": 110.0,
-        "width": 410.0,
-        "height": 396.0,
-        "fills": [
-          {
-            "opacity": 0.23999999463558197,
-            "blendMode": "NORMAL",
-            "type": "SOLID",
-            "color": {
-              "r": 0.9,
-              "g": 0.9,
-              "b": 0.9,
-              "a": 1.0
-            }
-          }
-        ],
-        "topLeftRadius": 0,
-        "topRightRadius": 0,
-        "bottomLeftRadius": 0,
-        "bottomRightRadius": 0
-      },
-      "children": [
-        {
-          "tag": "P",
-          "node": {
-            "type": "TEXT",
-            "x": 265.0,
-            "y": 136.0,
-            "width": 135.0,
-            "height": 41.0,
-            "characters": "Sign in",
-            "fontSize": 32.0,
+            ],
+            "topLeftRadius": 0,
+            "topRightRadius": 0,
+            "bottomLeftRadius": 0,
+            "bottomRightRadius": 0,
+            "StrokeWeight": 0,
+            "flexDirection": "column",
+            "characters": "",
+            "fontSize": 15.0,
             "fontName": {
-              "family": "Kode Mono",
-              "style": "SemiBold"
-            },
-            "textAlignHorizontal": "LEFT"
-          },
-          "children": []
-        },
-        {
-          "tag": "DIV",
-          "node": {
-            "flexDirection": "column",
-
-            "type": "GROUP",
-            "x": 193.0,
-            "y": 198.0,
-            "width": 279.0,
-            "height": 60.0,
-            "backgrounds": [],
-            "effects": []
+              "family": "Permanent Marker",
+              "style": "Regular"
+            }
           },
           "children": [
             {
-              "tag": "P",
+              "tag": "DIV",
+              "name": "Frame 57",
               "node": {
-                "type": "TEXT",
-                "x": 198.0,
-                "y": 198.0,
-                "width": 68.0,
-                "height": 18.0,
-                "characters": "UserName",
-                "fontSize": 14.0,
-                "fontName": {
-                  "family": "Kode Mono",
-                  "style": "SemiBold"
-                },
-                "textAlignHorizontal": "LEFT"
-              },
-              "children": []
-            },
-            {
-              "tag": "INPUT",
-              "node": {
-                "flexDirection": "column",
-
-                "type": "RECTANGLE",
-                "x": 193.0,
-                "y": 219.0,
-                "width": 279.0,
-                "height": 39.0,
+                "type": "INSTANCE",
+                "x": 175,
+                "y": 202,
+                "width": 404.0,
+                "height": 638.0,
                 "fills": [
                   {
                     "blendMode": "NORMAL",
                     "type": "SOLID",
                     "color": {
-                      "r": 1.0,
-                      "g": 1.0,
-                      "b": 1.0,
-                      "a": 1.0
-                    }
-                  }
-                ],
-                "topLeftRadius": 10.0,
-                "topRightRadius": 10.0,
-                "bottomLeftRadius": 10.0,
-                "bottomRightRadius": 10.0,
-                "strokes": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.0,
-                      "g": 0.0,
-                      "b": 0.0,
-                      "a": 1.0
-                    }
-                  }
-                ]
-              },
-              "children": [
-                {
-                  "tag": "P",
-                  "node": {
-                    "type": "TEXT",
-                    "x": 203.0,
-                    "y": 230.0,
-                    "width": 93.0,
-                    "height": 18.0,
-                    "characters": "eg. AOZ2025",
-                    "fontSize": 14.0,
-                    "fontName": {
-                      "family": "Kode Mono",
-                      "style": "SemiBold"
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0
                     },
-                    "fills": [
-                      {
-                        "blendMode": "NORMAL",
-                        "type": "SOLID",
-                        "color": {
-                          "r": 0.5487722754478455,
-                          "g": 0.5343995690345764,
-                          "b": 0.5343995690345764,
-                          "a": 1.0
-                        }
-                      }
-                    ],
-                    "textAlignHorizontal": "LEFT"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "tag": "DIV",
-          "node": {
-            "flexDirection": "column",
-
-            "type": "GROUP",
-            "x": 193.0,
-            "y": 299.0,
-            "width": 279.0,
-            "height": 60.0,
-            "backgrounds": [],
-            "effects": []
-          },
-          "children": [
-            {
-              "tag": "P",
-              "node": {
-                "type": "TEXT",
-                "x": 198.0,
-                "y": 299.0,
-                "width": 68.0,
-                "height": 18.0,
-                "characters": "Password",
-                "fontSize": 14.0,
-                "fontName": {
-                  "family": "Kode Mono",
-                  "style": "SemiBold"
-                },
-                "textAlignHorizontal": "LEFT"
-              },
-              "children": []
-            },
-            {
-              "tag": "INPUT",
-              "node": {
-                "flexDirection": "column",
-
-                "type": "RECTANGLE",
-                "x": 193.0,
-                "y": 320.0,
-                "width": 279.0,
-                "height": 39.0,
-                "fills": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": {
-                      "r": 1.0,
-                      "g": 1.0,
-                      "b": 1.0,
-                      "a": 1.0
-                    }
+                    "imageRef": null
                   }
                 ],
-                "topLeftRadius": 10.0,
-                "topRightRadius": 10.0,
-                "bottomLeftRadius": 10.0,
-                "bottomRightRadius": 10.0,
                 "strokes": [
                   {
                     "blendMode": "NORMAL",
                     "type": "SOLID",
                     "color": {
-                      "r": 0.0,
-                      "g": 0.0,
-                      "b": 0.0,
-                      "a": 1.0
-                    }
-                  }
-                ]
-              },
-              "children": []
-            }
-          ]
-        },
-        {
-          "tag": "DIV",
-          "node": {
-            "flexDirection": "row",
-
-            "type": "GROUP",
-            "x": 205.0,
-            "y": 387.0,
-            "width": 340.0,
-            "height": 60.0,
-            "backgrounds": [],
-            "effects": []
-          },
-          "children": [
-            {
-              "tag": "CHECKBOX",
-              "node": {
-                "type": "RECTANGLE",
-                "x": 205.0,
-                "y": 387.0,
-                "width": 15.0,
-                "height": 15.0,
-                "fills": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.8509804010391235,
-                      "g": 0.8509804010391235,
-                      "b": 0.8509804010391235,
-                      "a": 1.0
-                    }
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0
+                    },
+                    "weight": 0
                   }
                 ],
                 "topLeftRadius": 0,
                 "topRightRadius": 0,
                 "bottomLeftRadius": 0,
                 "bottomRightRadius": 0,
-                "strokes": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.0,
-                      "g": 0.0,
-                      "b": 0.0,
-                      "a": 1.0
-                    }
-                  }
-                ]
-              },
-              "children": []
-            },
-            {
-              "tag": "P",
-              "node": {
-                "type": "TEXT",
-                "x": 229.0,
-                "y": 387.0,
-                "width": 238.0,
-                "height": 15.0,
-                "characters": "Agree to the Terms and Conditions",
-                "fontSize": 12.0,
+                "StrokeWeight": 0,
+                "flexDirection": "column",
+                "characters": "",
+                "fontSize": 15.0,
                 "fontName": {
-                  "family": "Kode Mono",
-                  "style": "SemiBold"
-                },
-                "textAlignHorizontal": "LEFT"
+                  "family": "Permanent Marker",
+                  "style": "Regular"
+                }
               },
-              "children": []
+              "children": [
+                {
+                  "tag": "DIV",
+                  "name": "GROUP 5006",
+                  "node": {
+                    "type": "FRAME",
+                    "x": 175,
+                    "y": 202,
+                    "width": 372.0,
+                    "height": 79.26415061950684,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "Frame 51",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 202,
+                        "width": 262.0,
+                        "height": 52.52830123901367,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "P",
+                          "name": "Get Started Now",
+                          "node": {
+                            "type": "TEXT",
+                            "x": 175,
+                            "y": 202,
+                            "width": 262.0,
+                            "height": 48.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.0,
+                                  "g": 0.0,
+                                  "b": 0.0,
+                                  "a": 1.0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "Get Started Now",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "P",
+                      "name": "Enter your Credentials to access your account",
+                      "node": {
+                        "type": "TEXT",
+                        "x": 175,
+                        "y": 255,
+                        "width": 372.0,
+                        "height": 26.264150619506836,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "Enter your Credentials to access your account",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Frame 54",
+                  "node": {
+                    "type": "FRAME",
+                    "x": 175,
+                    "y": 313,
+                    "width": 404.0,
+                    "height": 58.0,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "GROUP 5002",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 313,
+                        "width": 404.0,
+                        "height": 53.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 52",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 313,
+                            "width": 43.0,
+                            "height": 21.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "P",
+                              "name": "Name",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 175,
+                                "y": 313,
+                                "width": 43.0,
+                                "height": 21.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Name",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "INPUT",
+                          "name": "Frame 53",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 334,
+                            "width": 404.0,
+                            "height": 32.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.8509804010391235,
+                                  "g": 0.8509804010391235,
+                                  "b": 0.8509804010391235,
+                                  "a": 1.0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 10.0,
+                            "topRightRadius": 10.0,
+                            "bottomLeftRadius": 10.0,
+                            "bottomRightRadius": 10.0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "Frame 58",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 185,
+                                "y": 344,
+                                "width": 84.0,
+                                "height": 15.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "P",
+                                  "name": "Enter your name",
+                                  "node": {
+                                    "type": "TEXT",
+                                    "x": 185,
+                                    "y": 344,
+                                    "width": 84.0,
+                                    "height": 15.0,
+                                    "fills": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0.8509804010391235,
+                                          "g": 0.8509804010391235,
+                                          "b": 0.8509804010391235,
+                                          "a": 1.0
+                                        },
+                                        "imageRef": null
+                                      }
+                                    ],
+                                    "strokes": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0,
+                                          "g": 0,
+                                          "b": 0,
+                                          "a": 0
+                                        },
+                                        "weight": 0
+                                      }
+                                    ],
+                                    "topLeftRadius": 0,
+                                    "topRightRadius": 0,
+                                    "bottomLeftRadius": 0,
+                                    "bottomRightRadius": 0,
+                                    "StrokeWeight": 0,
+                                    "flexDirection": "column",
+                                    "characters": "Enter your name",
+                                    "fontSize": 15.0,
+                                    "fontName": {
+                                      "family": "Permanent Marker",
+                                      "style": "Regular"
+                                    }
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Frame 55",
+                  "node": {
+                    "type": "INSTANCE",
+                    "x": 175,
+                    "y": 391,
+                    "width": 404.0,
+                    "height": 58.0,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "GROUP 5003",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 391,
+                        "width": 404.0,
+                        "height": 53.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 52",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 391,
+                            "width": 100.0,
+                            "height": 21.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "P",
+                              "name": "Name",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 175,
+                                "y": 391,
+                                "width": 100.0,
+                                "height": 21.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Email address",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "INPUT",
+                          "name": "Frame 53",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 412,
+                            "width": 404.0,
+                            "height": 32.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.8509804010391235,
+                                  "g": 0.8509804010391235,
+                                  "b": 0.8509804010391235,
+                                  "a": 1.0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 10.0,
+                            "topRightRadius": 10.0,
+                            "bottomLeftRadius": 10.0,
+                            "bottomRightRadius": 10.0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "Frame 58",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 185,
+                                "y": 420,
+                                "width": 82.0,
+                                "height": 15.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "P",
+                                  "name": "Name",
+                                  "node": {
+                                    "type": "TEXT",
+                                    "x": 185,
+                                    "y": 420,
+                                    "width": 82.0,
+                                    "height": 15.0,
+                                    "fills": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0.8509804010391235,
+                                          "g": 0.8509804010391235,
+                                          "b": 0.8509804010391235,
+                                          "a": 1.0
+                                        },
+                                        "imageRef": null
+                                      }
+                                    ],
+                                    "strokes": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0,
+                                          "g": 0,
+                                          "b": 0,
+                                          "a": 0
+                                        },
+                                        "weight": 0
+                                      }
+                                    ],
+                                    "topLeftRadius": 0,
+                                    "topRightRadius": 0,
+                                    "bottomLeftRadius": 0,
+                                    "bottomRightRadius": 0,
+                                    "StrokeWeight": 0,
+                                    "flexDirection": "column",
+                                    "characters": "Enter your email",
+                                    "fontSize": 15.0,
+                                    "fontName": {
+                                      "family": "Permanent Marker",
+                                      "style": "Regular"
+                                    }
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Frame 55",
+                  "node": {
+                    "type": "INSTANCE",
+                    "x": 175,
+                    "y": 468,
+                    "width": 404.0,
+                    "height": 58.0,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "GROUP 5004",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 468,
+                        "width": 404.0,
+                        "height": 53.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 52",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 468,
+                            "width": 69.0,
+                            "height": 21.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "P",
+                              "name": "Name",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 175,
+                                "y": 468,
+                                "width": 69.0,
+                                "height": 21.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Password",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "INPUT",
+                          "name": "Frame 53",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 175,
+                            "y": 489,
+                            "width": 404.0,
+                            "height": 32.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.8509804010391235,
+                                  "g": 0.8509804010391235,
+                                  "b": 0.8509804010391235,
+                                  "a": 1.0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 10.0,
+                            "topRightRadius": 10.0,
+                            "bottomLeftRadius": 10.0,
+                            "bottomRightRadius": 10.0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "Frame 58",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 185,
+                                "y": 498,
+                                "width": 31.0,
+                                "height": 15.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "P",
+                                  "name": "Name",
+                                  "node": {
+                                    "type": "TEXT",
+                                    "x": 185,
+                                    "y": 498,
+                                    "width": 31.0,
+                                    "height": 15.0,
+                                    "fills": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0.8509804010391235,
+                                          "g": 0.8509804010391235,
+                                          "b": 0.8509804010391235,
+                                          "a": 1.0
+                                        },
+                                        "imageRef": null
+                                      }
+                                    ],
+                                    "strokes": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0,
+                                          "g": 0,
+                                          "b": 0,
+                                          "a": 0
+                                        },
+                                        "weight": 0
+                                      }
+                                    ],
+                                    "topLeftRadius": 0,
+                                    "topRightRadius": 0,
+                                    "bottomLeftRadius": 0,
+                                    "bottomRightRadius": 0,
+                                    "StrokeWeight": 0,
+                                    "flexDirection": "column",
+                                    "characters": "Name",
+                                    "fontSize": 15.0,
+                                    "fontName": {
+                                      "family": "Permanent Marker",
+                                      "style": "Regular"
+                                    }
+                                  },
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Group 3",
+                  "node": {
+                    "type": "GROUP",
+                    "x": 175,
+                    "y": 545,
+                    "width": 143.0,
+                    "height": 15.320755004882812,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 2.0,
+                    "topRightRadius": 2.0,
+                    "bottomLeftRadius": 2.0,
+                    "bottomRightRadius": 2.0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "row",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "CHECKBOX",
+                      "name": "Rectangle 8",
+                      "node": {
+                        "type": "RECTANGLE",
+                        "x": 175,
+                        "y": 547,
+                        "width": 9.0,
+                        "height": 9.849056243896484,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 2.0,
+                        "topRightRadius": 2.0,
+                        "bottomLeftRadius": 2.0,
+                        "bottomRightRadius": 2.0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": []
+                    },
+                    {
+                      "tag": "P",
+                      "name": "I agree to the terms & policy",
+                      "node": {
+                        "type": "TEXT",
+                        "x": 190,
+                        "y": 545,
+                        "width": 128.0,
+                        "height": 15.320755004882812,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0,
+                              "a": 1.0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "I agree to the terms & policy",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "BUTTON",
+                  "name": "Frame 56",
+                  "node": {
+                    "type": "INSTANCE",
+                    "x": 175,
+                    "y": 590,
+                    "width": 404.0,
+                    "height": 35.01886749267578,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.929411768913269,
+                          "g": 0.9490196108818054,
+                          "b": 0.9686274528503418,
+                          "a": 1.0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "Frame 53",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 590,
+                        "width": 404.0,
+                        "height": 32.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.22745098173618317,
+                              "g": 0.35686275362968445,
+                              "b": 0.13333334028720856,
+                              "a": 1.0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.22745098173618317,
+                              "g": 0.35686275362968445,
+                              "b": 0.13333334028720856,
+                              "a": 1.0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 10.0,
+                        "topRightRadius": 10.0,
+                        "bottomLeftRadius": 10.0,
+                        "bottomRightRadius": 10.0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "BUTTON",
+                          "name": "Frame 55",
+                          "node": {
+                            "type": "INSTANCE",
+                            "x": 175,
+                            "y": 590,
+                            "width": 404.0,
+                            "height": 32.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "Frame 52",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 175,
+                                "y": 590,
+                                "width": 43.0,
+                                "height": 23.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "P",
+                                  "name": "Name",
+                                  "node": {
+                                    "type": "TEXT",
+                                    "x": 175,
+                                    "y": 590,
+                                    "width": 43.0,
+                                    "height": 23.0,
+                                    "fills": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0.0,
+                                          "g": 0.0,
+                                          "b": 0.0,
+                                          "a": 1.0
+                                        },
+                                        "imageRef": null
+                                      }
+                                    ],
+                                    "strokes": [
+                                      {
+                                        "blendMode": "NORMAL",
+                                        "type": "SOLID",
+                                        "color": {
+                                          "r": 0,
+                                          "g": 0,
+                                          "b": 0,
+                                          "a": 0
+                                        },
+                                        "weight": 0
+                                      }
+                                    ],
+                                    "topLeftRadius": 0,
+                                    "topRightRadius": 0,
+                                    "bottomLeftRadius": 0,
+                                    "bottomRightRadius": 0,
+                                    "StrokeWeight": 0,
+                                    "flexDirection": "row",
+                                    "characters": "Name",
+                                    "fontSize": 15.0,
+                                    "fontName": {
+                                      "family": "Permanent Marker",
+                                      "style": "Regular"
+                                    }
+                                  },
+                                  "children": [
+                                    {
+                                      "tag": "DIV",
+                                      "name": "Frame 58",
+                                      "node": {
+                                        "type": "FRAME",
+                                        "x": 185,
+                                        "y": 598,
+                                        "width": 31.0,
+                                        "height": 15.0,
+                                        "fills": [
+                                          {
+                                            "blendMode": "NORMAL",
+                                            "type": "SOLID",
+                                            "color": {
+                                              "r": 0,
+                                              "g": 0,
+                                              "b": 0,
+                                              "a": 0
+                                            },
+                                            "imageRef": null
+                                          }
+                                        ],
+                                        "strokes": [
+                                          {
+                                            "blendMode": "NORMAL",
+                                            "type": "SOLID",
+                                            "color": {
+                                              "r": 0,
+                                              "g": 0,
+                                              "b": 0,
+                                              "a": 0
+                                            },
+                                            "weight": 0
+                                          }
+                                        ],
+                                        "topLeftRadius": 0,
+                                        "topRightRadius": 0,
+                                        "bottomLeftRadius": 0,
+                                        "bottomRightRadius": 0,
+                                        "StrokeWeight": 0,
+                                        "flexDirection": "column",
+                                        "characters": "",
+                                        "fontSize": 15.0,
+                                        "fontName": {
+                                          "family": "Permanent Marker",
+                                          "style": "Regular"
+                                        }
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "P",
+                                          "name": "Name",
+                                          "node": {
+                                            "type": "TEXT",
+                                            "x": 185,
+                                            "y": 598,
+                                            "width": 31.0,
+                                            "height": 15.0,
+                                            "fills": [
+                                              {
+                                                "blendMode": "NORMAL",
+                                                "type": "SOLID",
+                                                "color": {
+                                                  "r": 0.8509804010391235,
+                                                  "g": 0.8509804010391235,
+                                                  "b": 0.8509804010391235,
+                                                  "a": 1.0
+                                                },
+                                                "imageRef": null
+                                              }
+                                            ],
+                                            "strokes": [
+                                              {
+                                                "blendMode": "NORMAL",
+                                                "type": "SOLID",
+                                                "color": {
+                                                  "r": 0,
+                                                  "g": 0,
+                                                  "b": 0,
+                                                  "a": 0
+                                                },
+                                                "weight": 0
+                                              }
+                                            ],
+                                            "topLeftRadius": 0,
+                                            "topRightRadius": 0,
+                                            "bottomLeftRadius": 0,
+                                            "bottomRightRadius": 0,
+                                            "StrokeWeight": 0,
+                                            "flexDirection": "column",
+                                            "characters": "Name",
+                                            "fontSize": 15.0,
+                                            "fontName": {
+                                              "family": "Permanent Marker",
+                                              "style": "Regular"
+                                            }
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "P",
+                              "name": "Login",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 360,
+                                "y": 596,
+                                "width": 47.0,
+                                "height": 20.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 1.0,
+                                      "g": 1.0,
+                                      "b": 1.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Signup",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Frame 61",
+                  "node": {
+                    "type": "FRAME",
+                    "x": 178,
+                    "y": 684,
+                    "width": 400.0,
+                    "height": 15.320755004882812,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "GROUP 5005",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 178,
+                        "y": 684,
+                        "width": 400.0,
+                        "height": 14.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "row",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 60",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 368,
+                            "y": 684,
+                            "width": 20.0,
+                            "height": 14.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0,
+                                  "a": 1.0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "P",
+                              "name": "Or",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 373,
+                                "y": 684,
+                                "width": 11.0,
+                                "height": 14.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Or",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "HR",
+                          "name": "Line 2",
+                          "node": {
+                            "type": "LINE",
+                            "x": 178,
+                            "y": 693,
+                            "width": 400.0,
+                            "height": 0.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.9607843160629272,
+                                  "g": 0.9607843160629272,
+                                  "b": 0.9607843160629272,
+                                  "a": 1.0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "ROW 5001",
+                  "node": {
+                    "type": "FRAME",
+                    "x": 175,
+                    "y": 760,
+                    "width": 403.0,
+                    "height": 34.0,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "row",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "BUTTON",
+                      "name": "Frame 60",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 175,
+                        "y": 762,
+                        "width": 190.0,
+                        "height": 32.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.8509804010391235,
+                              "g": 0.8509804010391235,
+                              "b": 0.8509804010391235,
+                              "a": 1.0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 10.0,
+                        "topRightRadius": 10.0,
+                        "bottomLeftRadius": 10.0,
+                        "bottomRightRadius": 10.0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "row",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 59",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 195,
+                            "y": 766,
+                            "width": 150.0,
+                            "height": 24.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "ICON 0",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 195,
+                                "y": 766,
+                                "width": 24.0,
+                                "height": 24.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 1.0,
+                                      "g": 1.0,
+                                      "b": 1.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            },
+                            {
+                              "tag": "P",
+                              "name": "Sign in with Google",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 229,
+                                "y": 769,
+                                "width": 116.0,
+                                "height": 18.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Sign in with Google",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "BUTTON",
+                      "name": "Frame 62",
+                      "node": {
+                        "type": "FRAME",
+                        "x": 388,
+                        "y": 760,
+                        "width": 190.0,
+                        "height": 32.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0.8509804010391235,
+                              "g": 0.8509804010391235,
+                              "b": 0.8509804010391235,
+                              "a": 1.0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 10.0,
+                        "topRightRadius": 10.0,
+                        "bottomLeftRadius": 10.0,
+                        "bottomRightRadius": 10.0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "row",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "DIV",
+                          "name": "Frame 59",
+                          "node": {
+                            "type": "FRAME",
+                            "x": 412,
+                            "y": 764,
+                            "width": 142.0,
+                            "height": 24.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "row",
+                            "characters": "",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": [
+                            {
+                              "tag": "DIV",
+                              "name": "ICON 1",
+                              "node": {
+                                "type": "FRAME",
+                                "x": 412,
+                                "y": 764,
+                                "width": 24.0,
+                                "height": 24.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 1.0,
+                                      "g": 1.0,
+                                      "b": 1.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            },
+                            {
+                              "tag": "P",
+                              "name": "Sign in with Apple",
+                              "node": {
+                                "type": "TEXT",
+                                "x": 446,
+                                "y": 767,
+                                "width": 108.0,
+                                "height": 18.0,
+                                "fills": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0.0,
+                                      "g": 0.0,
+                                      "b": 0.0,
+                                      "a": 1.0
+                                    },
+                                    "imageRef": null
+                                  }
+                                ],
+                                "strokes": [
+                                  {
+                                    "blendMode": "NORMAL",
+                                    "type": "SOLID",
+                                    "color": {
+                                      "r": 0,
+                                      "g": 0,
+                                      "b": 0,
+                                      "a": 0
+                                    },
+                                    "weight": 0
+                                  }
+                                ],
+                                "topLeftRadius": 0,
+                                "topRightRadius": 0,
+                                "bottomLeftRadius": 0,
+                                "bottomRightRadius": 0,
+                                "StrokeWeight": 0,
+                                "flexDirection": "column",
+                                "characters": "Sign in with Apple",
+                                "fontSize": 15.0,
+                                "fontName": {
+                                  "family": "Permanent Marker",
+                                  "style": "Regular"
+                                }
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "DIV",
+                  "name": "Frame 59",
+                  "node": {
+                    "type": "FRAME",
+                    "x": 288,
+                    "y": 817,
+                    "width": 183.0,
+                    "height": 22.98113250732422,
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "imageRef": null
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 0
+                        },
+                        "weight": 0
+                      }
+                    ],
+                    "topLeftRadius": 0,
+                    "topRightRadius": 0,
+                    "bottomLeftRadius": 0,
+                    "bottomRightRadius": 0,
+                    "StrokeWeight": 0,
+                    "flexDirection": "column",
+                    "characters": "",
+                    "fontSize": 15.0,
+                    "fontName": {
+                      "family": "Permanent Marker",
+                      "style": "Regular"
+                    }
+                  },
+                  "children": [
+                    {
+                      "tag": "DIV",
+                      "name": "Group 4",
+                      "node": {
+                        "type": "GROUP",
+                        "x": 288,
+                        "y": 817,
+                        "width": 183.0,
+                        "height": 21.0,
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "imageRef": null
+                          }
+                        ],
+                        "strokes": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 0,
+                              "g": 0,
+                              "b": 0,
+                              "a": 0
+                            },
+                            "weight": 0
+                          }
+                        ],
+                        "topLeftRadius": 0,
+                        "topRightRadius": 0,
+                        "bottomLeftRadius": 0,
+                        "bottomRightRadius": 0,
+                        "StrokeWeight": 0,
+                        "flexDirection": "column",
+                        "characters": "",
+                        "fontSize": 15.0,
+                        "fontName": {
+                          "family": "Permanent Marker",
+                          "style": "Regular"
+                        }
+                      },
+                      "children": [
+                        {
+                          "tag": "P",
+                          "name": "Have an account? Sign In",
+                          "node": {
+                            "type": "TEXT",
+                            "x": 288,
+                            "y": 817,
+                            "width": 183.0,
+                            "height": 21.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0.0,
+                                  "g": 0.0,
+                                  "b": 0.0,
+                                  "a": 1.0
+                                },
+                                "imageRef": null
+                              }
+                            ],
+                            "strokes": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 0,
+                                  "g": 0,
+                                  "b": 0,
+                                  "a": 0
+                                },
+                                "weight": 0
+                              }
+                            ],
+                            "topLeftRadius": 0,
+                            "topRightRadius": 0,
+                            "bottomLeftRadius": 0,
+                            "bottomRightRadius": 0,
+                            "StrokeWeight": 0,
+                            "flexDirection": "column",
+                            "characters": "Have an account?  Sign In",
+                            "fontSize": 15.0,
+                            "fontName": {
+                              "family": "Permanent Marker",
+                              "style": "Regular"
+                            }
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
-          "tag": "BUTTON",
+          "tag": "IMG",
+          "name": "IMAGE 0",
           "node": {
-            "flexDirection": "column",
-
             "type": "RECTANGLE",
-            "x": 220.0,
-            "y": 421.0,
-            "width": 226.0,
-            "height": 52.0,
+            "x": 754,
+            "y": 0,
+            "width": 781.5,
+            "height": 1042.0,
             "fills": [
               {
                 "blendMode": "NORMAL",
-                "type": "SOLID",
-                "color": {
-                  "r": 0.6745098233222961,
-                  "g": 0.6941176652908325,
-                  "b": 0.8941176533699036,
-                  "a": 1.0
-                }
+                "type": "IMAGE",
+                "color": null,
+                "imageRef": "https://s3-alpha-sig.figma.com/img/c230/ffba/520fab60716f712257d7f6a7fc48a42f?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=X8O9uH-UHlAC0ViSmUr0zWe6A5PKuhUV2qiZk7sMqJ2fxy0K~zajagwaiJ8L9f~26trm8V08DQbdGt4ukFALKrAZyltO7MJCEy-D0eTIDIi0~YixL6EuG7hwsCUSv1lVm6zQ7F9WGX3yD-pVtCbquNTVymEyTb0UoqhYQDuqse97eBCgdWaX2iGgFs9e1bHNrYx5TdCMB0lkBQFshoGl8gVr-o7BTS0TH~kJOGpOyavZneHo2Wm9ZLPF464dindHvIaU0E9owCQNGf8ryfE9~O-PLI-uYPiDEmqfY0eL85yFLOIN51jet4qsqNPf4pCPOTG70G8VbMBwbu2iwkm8pw__"
               }
             ],
-            "topLeftRadius": 15.0,
-            "topRightRadius": 15.0,
-            "bottomLeftRadius": 15.0,
-            "bottomRightRadius": 15.0,
             "strokes": [
               {
                 "blendMode": "NORMAL",
                 "type": "SOLID",
                 "color": {
-                  "r": 0.0,
-                  "g": 0.0,
-                  "b": 0.0,
-                  "a": 1.0
-                }
-              }
-            ]
-          },
-          "children": [
-            {
-              "tag": "P",
-              "node": {
-                "type": "TEXT",
-                "x": 282.0,
-                "y": 431.0,
-                "width": 101.0,
-                "height": 31.0,
-                "characters": "Sign In",
-                "fontSize": 24.0,
-                "fontName": {
-                  "family": "Kode Mono",
-                  "style": "SemiBold"
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
                 },
-                "fills": [
-                  {
-                    "blendMode": "NORMAL",
-                    "type": "SOLID",
-                    "color": {
-                      "r": 0.0,
-                      "g": 0.0,
-                      "b": 0.0,
-                      "a": 1.0
-                    }
-                  }
-                ],
-                "textAlignHorizontal": "LEFT"
-              },
-              "children": []
+                "weight": 0
+              }
+            ],
+            "topLeftRadius": 0,
+            "topRightRadius": 0,
+            "bottomLeftRadius": 0,
+            "bottomRightRadius": 0,
+            "StrokeWeight": 0,
+            "flexDirection": "column",
+            "characters": "",
+            "fontSize": 15.0,
+            "fontName": {
+              "family": "Permanent Marker",
+              "style": "Regular"
             }
-          ]
+          },
+          "children": []
         }
       ]
     }

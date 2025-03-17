@@ -34,6 +34,7 @@ export class Div extends BaseComponent {
     this.wrapperStyles = {
       display: "flex",
       overflow: "hidden",
+      // justifyContent: "space-around",
     };
     this.wrapperClassName = this.className + "-wrapper";
     // Get the container bounds
@@ -267,7 +268,7 @@ export class Div extends BaseComponent {
 
   getStyles(): Record<string, string> {
     const commonStyles = this.getCommonStyles();
-
+    commonStyles.justifyContent = "space-around";
     const node = this.data.node as ShapeNode;
 
     // Parse background styles

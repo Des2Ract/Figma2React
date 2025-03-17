@@ -19,7 +19,7 @@ export function parseBackgroundStyles(fills: Fill[]): Record<string, string> {
   if (imageFills.length > 0) {
     // In a real implementation, you'd need to handle image references
     return {
-      backgroundImage: `url(/* image reference would go here */)`,
+      backgroundImage: `url(${imageFills[0].imageRef})`,
     };
   }
 

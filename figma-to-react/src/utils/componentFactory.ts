@@ -21,7 +21,7 @@ export function createComponent(
     case "P":
       return new P(data);
     case "BUTTON":
-      return new Button(data);
+      return new Button(data, cssGenerator);
     case "INPUT":
       return new Input(data);
     case "CHECKBOX":
