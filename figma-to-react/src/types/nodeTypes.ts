@@ -36,6 +36,7 @@ export interface NodeBase {
   parentHeight?: number;
   parentX?: number;
   parentY?: number;
+  characters?: string;
 }
 
 export interface ShapeNode extends NodeBase {

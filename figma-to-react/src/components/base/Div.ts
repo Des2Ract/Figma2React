@@ -267,6 +267,7 @@ export class Div extends BaseComponent {
 
   getStyles(): Record<string, string> {
     const commonStyles = this.getCommonStyles();
+
     const node = this.data.node as ShapeNode;
 
     // Parse background styles

@@ -6,35 +6,33 @@ import {
 } from "../../utils/styleParser";
 
 export class Checkbox extends BaseComponent {
-  constructor(data: ComponentNode) {
+  private dataLabel: ComponentNode | undefined;
+
+  constructor(data: ComponentNode, dataLabel: ComponentNode | undefined) {
     super(data);
+    this.dataLabel = dataLabel;
   }
 
   toReact(): string {
-    // Extract potential label text from node properties
+    // Extract label text from dataLabel if available
     const label = this.getLabel();
-
-    // Determine if checkbox should be checked by default
-    const isChecked = this.isCheckedByDefault();
 
     // Generate checkbox with optional label
     if (label) {
       return `
-        <div className="${this.className}-container">
           <input 
             type="checkbox" 
             id="${this.id}" 
-            className="${this.className}" 
-            ${isChecked ? "defaultChecked" : ""} 
           />
-          <label htmlFor="${this.id}">${label}</label>
-        </div>
+        <label 
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          ${label}
+        </label>
       `;
     }
 
-    return `<input type="checkbox" className="${this.className}" ${
-      isChecked ? "defaultChecked" : ""
-    } />`;
+    return `<input type="checkbox" className="${this.className}"  />`;
   }
 
   getStyles(): Record<string, string> {
@@ -60,42 +58,24 @@ export class Checkbox extends BaseComponent {
       gap: "8px",
     };
 
-    return {
-      checkbox: {
-        ...commonStyles,
-        ...backgroundStyles,
-        ...borderStyles,
-        ...checkboxStyles,
-      },
-      container: {
-        ...containerStyles,
-      },
-    };
+    return {};
   }
 
-  private isCheckedByDefault(): boolean {
-    // In a real implementation, this would check node properties or naming conventions
-    // to determine if the checkbox should be checked by default
+  private getLabel(): string | undefined {
+    // Check if dataLabel exists and extract text from it
+    if (this.dataLabel && this.dataLabel.node) {
+      // Assuming a text property exists on the node or its children
+      // This implementation may need adjustment based on your actual node structure
+      return this.dataLabel.node.characters;
+    }
 
-    // For example, check if the node name contains "checked" or if there's a custom property
-    const nodeName = this.data.name?.toLowerCase() || "";
-    return nodeName.includes("checked") || nodeName.includes("selected");
-  }
-
-  private getLabel(): string {
-    // In a real implementation, this would extract label text from node properties
-    // or check for text children that serve as labels
-
-    // This could look for text nodes that are siblings or children of the checkbox node
-    // For now, we'll just return an empty string
+    // Return empty string if no label found
     return "";
   }
 
   private getId(): string {
     // Generate a unique ID for the checkbox to associate with its label
-    return `checkbox-${
-      this.data.id || Math.random().toString(36).substr(2, 9)
-    }`;
+    return `checkbox-${Math.random().toString(36).substr(2, 9)}`;
   }
 
   get id(): string {

@@ -5,10 +5,12 @@ import { Button } from "../components/base/Button";
 import { Input } from "../components/base/Input";
 import { Body } from "../components/base/Body";
 import { CSSGenerator } from "./cssGenerator";
+import { Checkbox } from "../components/base/Checkbox"; // Added import
 
 export function createComponent(
   data: ComponentNode,
-  cssGenerator: CSSGenerator
+  cssGenerator: CSSGenerator,
+  dataLabel?: ComponentNode
 ): any {
   switch (data.tag.toUpperCase()) {
     case "DIV":
@@ -19,6 +21,8 @@ export function createComponent(
       return new Button(data);
     case "INPUT":
       return new Input(data);
+    case "CHECKBOX":
+      return new Checkbox(data, dataLabel);
     // Add other component types as needed
     default:
       console.warn(`Unknown component tag: ${data.tag}. Falling back to Div.`);
@@ -28,18 +32,33 @@ export function createComponent(
 
 export function parseComponentTree(
   data: ComponentNode,
-  cssGenerator: CSSGenerator
+  cssGenerator: CSSGenerator,
+  dataLabel?: ComponentNode
 ): string {
   // Ensure only the root is a body tag
   const componentData = data;
-  const component = createComponent(componentData, cssGenerator);
+  const component = createComponent(componentData, cssGenerator, dataLabel);
   cssGenerator.addComponent(component);
 
   let childrenCode = "";
   if (data.children && data.children.length > 0) {
-    data.children.forEach((child) => {
-      childrenCode += parseComponentTree(child, cssGenerator);
-    });
+    for (let index = 0; index < data.children.length; index++) {
+      const child = data.children[index];
+      if (child.tag && child.tag.toUpperCase() === "CHECKBOX") {
+        if (index + 1 < data.children.length) {
+          childrenCode += parseComponentTree(
+            child,
+            cssGenerator,
+            data.children[index + 1]
+          );
+          index++; // Skip the next element
+        } else {
+          childrenCode += parseComponentTree(child, cssGenerator);
+        }
+      } else {
+        childrenCode += parseComponentTree(child, cssGenerator);
+      }
+    }
   }
 
   return component.toReact(childrenCode);

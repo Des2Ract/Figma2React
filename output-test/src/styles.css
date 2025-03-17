@@ -58,7 +58,7 @@
   max-width: 100%;
   background-color: rgba(230, 230, 230, 1);
   box-sizing: border-box;
-  gap: 13.5px;
+  gap: 15px;
 }
 
 .p_3 {
@@ -210,63 +210,24 @@
 .div_11-wrapper {
   display: flex;
   overflow: hidden;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 }
 
 .div_11 {
-  position: absolute;
-  left: 205px;
-  top: 387px;
-  width: 262px;
-  height: 15px;
+  display: flex;
+  flex-direction: row;
+  width: 340px;
+  height: 60px;
   max-width: 100%;
   box-sizing: border-box;
-  gap: 0px;
-}
-
-.checkbox_12-wrapper {
-  display: flex;
-  overflow: hidden;
-  justify-content: flex-start;
-  width: 100%;
+  gap: 4.5px;
 }
 
 .checkbox_12 {
-  position: absolute;
-  left: 205px;
-  top: 387px;
-  width: 15px;
-  height: 15px;
-  max-width: 100%;
-  background-color: rgba(217, 217, 217, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 1);
-  box-sizing: border-box;
-  gap: 0px;
 }
 
-.p_13 {
-  position: absolute;
-  left: 229px;
-  top: 387px;
-  width: undefined;
-  height: undefined;
-  max-width: 100%;
-  font-size: 12px;
-  font-family: 'Kode Mono', monospace;
-  font-weight: bold;
-  font-style: normal;
-  text-align: right;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  color: #000000;
-  white-space: pre-wrap;
-}
-
-.button_14 {
+.button_13 {
   display: flex;
   flex-direction: column;
   width: 226px;
@@ -290,7 +251,7 @@
   border: 0;
 }
 
-.p_15 {
+.p_14 {
   display: flex;
   flex-direction: column;
   width: undefined;
@@ -349,15 +310,11 @@
     width: 100%;
   }
   .checkbox_12 {
+  }
+  .button_13 {
     width: 100%;
   }
-  .p_13 {
-    width: 100%;
-  }
-  .button_14 {
-    width: 100%;
-  }
-  .p_15 {
+  .p_14 {
     width: 100%;
   }
 }
@@ -410,15 +367,11 @@
     width: 100%;
   }
   .checkbox_12 {
+  }
+  .button_13 {
     width: 100%;
   }
-  .p_13 {
-    width: 100%;
-  }
-  .button_14 {
-    width: 100%;
-  }
-  .p_15 {
+  .p_14 {
     width: 100%;
     font-size: 21.6px;
   }
