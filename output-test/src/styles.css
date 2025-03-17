@@ -22,35 +22,225 @@
   max-width: 100%;
   background-color: rgba(242, 242, 242, 1);
   box-sizing: border-box;
-  gap: 4.5px;
+  gap: 9px;
 }
 
-.p_1 {
+.img_1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background-color: rgba(219, 215, 215, 1);
+  object-fit: cover;
+  box-sizing: border-box;
+  opacity: 0.4099999964237213;
+  pointer-events: none;
+}
+
+.navbar_2-wrapper {
   display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar_2 a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar_2 a:hover {
+  text-decoration: underline;
+  color: undefined;
+}
+
+.navbar_2 {
+  display: flex;
+  flex-direction: row;
+  width: 668px;
+  height: 49px;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.p_3 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 20px;
   font-family: 'Permanent Marker', cursive;
   font-weight: normal;
   font-style: normal;
   text-align: left;
+  justify-content: left;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: rgba(255, 255, 255, 1);
   white-space: pre-wrap;
 }
 
-.div_2-wrapper {
+.p_4 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: undefined;
+  height: undefined;
+  max-width: 100%;
+  display: flex;
+  font-size: 16px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+}
+
+.p_5 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: undefined;
+  height: undefined;
+  max-width: 100%;
+  display: flex;
+  font-size: 16px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+}
+
+.p_6 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: undefined;
+  height: undefined;
+  max-width: 100%;
+  display: flex;
+  font-size: 16px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+}
+
+.button_7 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: 110px;
+  height: 29px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.p_8 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: undefined;
+  height: undefined;
+  max-width: 100%;
+  display: flex;
+  font-size: 15px;
+  font-family: 'Kode Mono', monospace;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 1);
+  white-space: pre-wrap;
+}
+
+.p_9 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
+  width: undefined;
+  height: undefined;
+  max-width: 100%;
+  display: flex;
+  font-size: 20px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: undefined;
+  white-space: pre-wrap;
+}
+
+.hr_10 {
+  position: absolute;
+  left: 28px;
+  top: 98px;
+  width: 176px;
+  height: 0px;
+  max-width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.div_11-wrapper {
   display: flex;
   overflow: hidden;
   justify-content: center;
   width: 100%;
 }
 
-.div_2 {
+.div_11 {
   display: flex;
   flex-direction: column;
   width: 410px;
@@ -61,32 +251,35 @@
   gap: 15px;
 }
 
-.p_3 {
-  display: flex;
-  flex-direction: column;
+.p_12 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 32px;
   font-family: 'Kode Mono', monospace;
   font-weight: bold;
   font-style: normal;
   text-align: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: undefined;
   white-space: pre-wrap;
 }
 
-.div_4-wrapper {
+.div_13-wrapper {
   display: flex;
   overflow: hidden;
   justify-content: center;
   width: 100%;
 }
 
-.div_4 {
+.div_13 {
   display: flex;
   flex-direction: column;
   width: 279px;
@@ -96,25 +289,28 @@
   gap: 1.5px;
 }
 
-.p_5 {
-  display: flex;
-  flex-direction: column;
+.p_14 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 14px;
   font-family: 'Kode Mono', monospace;
   font-weight: bold;
   font-style: normal;
   text-align: left;
+  justify-content: left;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: undefined;
   white-space: pre-wrap;
 }
 
-.input_6 {
+.input_15 {
   display: flex;
   flex-direction: column;
   width: 279px;
@@ -134,32 +330,35 @@
   font-family: inherit;
 }
 
-.p_7 {
-  display: flex;
-  flex-direction: column;
+.p_16 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 14px;
   font-family: 'Kode Mono', monospace;
   font-weight: bold;
   font-style: normal;
   text-align: left;
+  justify-content: left;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: rgba(140, 136, 136, 1);
   white-space: pre-wrap;
 }
 
-.div_8-wrapper {
+.div_17-wrapper {
   display: flex;
   overflow: hidden;
   justify-content: center;
   width: 100%;
 }
 
-.div_8 {
+.div_17 {
   display: flex;
   flex-direction: column;
   width: 279px;
@@ -169,25 +368,28 @@
   gap: 1.5px;
 }
 
-.p_9 {
-  display: flex;
-  flex-direction: column;
+.p_18 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 14px;
   font-family: 'Kode Mono', monospace;
   font-weight: bold;
   font-style: normal;
   text-align: left;
+  justify-content: left;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: undefined;
   white-space: pre-wrap;
 }
 
-.input_10 {
+.input_19 {
   display: flex;
   flex-direction: column;
   width: 279px;
@@ -207,14 +409,14 @@
   font-family: inherit;
 }
 
-.div_11-wrapper {
+.div_20-wrapper {
   display: flex;
   overflow: hidden;
   justify-content: flex-end;
   width: 100%;
 }
 
-.div_11 {
+.div_20 {
   display: flex;
   flex-direction: row;
   width: 340px;
@@ -224,15 +426,18 @@
   gap: 4.5px;
 }
 
-.checkbox_12 {
+.checkbox_21 {
 }
 
-.button_13 {
+.button_22 {
   display: flex;
   flex-direction: column;
   width: 226px;
   height: 52px;
   max-width: 100%;
+  position: undefined;
+  left: undefined;
+  top: undefined;
   background-color: rgba(172, 177, 228, 1);
   border-style: solid;
   border-width: 1px;
@@ -248,24 +453,26 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: 0;
 }
 
-.p_14 {
-  display: flex;
-  flex-direction: column;
+.p_23 {
+  position: undefined;
+  left: undefined;
+  top: undefined;
   width: undefined;
   height: undefined;
   max-width: 100%;
+  display: flex;
   font-size: 24px;
   font-family: 'Kode Mono', monospace;
   font-weight: bold;
   font-style: normal;
   text-align: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #000000;
+  color: rgba(0, 0, 0, 1);
   white-space: pre-wrap;
 }
 
@@ -276,45 +483,71 @@
   .div_0 {
     width: 100%;
   }
-  .p_1 {
-    width: 100%;
+  .img_1 {
   }
-  .div_2 {
+  .navbar_2 {
     width: 100%;
   }
   .p_3 {
     width: 100%;
   }
-  .div_4 {
+  .p_4 {
     width: 100%;
   }
   .p_5 {
     width: 100%;
   }
-  .input_6 {
+  .p_6 {
     width: 100%;
   }
-  .p_7 {
+  .button_7 {
     width: 100%;
   }
-  .div_8 {
+  .p_8 {
     width: 100%;
   }
   .p_9 {
     width: 100%;
   }
-  .input_10 {
+  .hr_10 {
     width: 100%;
   }
   .div_11 {
     width: 100%;
   }
-  .checkbox_12 {
+  .p_12 {
+    width: 100%;
   }
-  .button_13 {
+  .div_13 {
     width: 100%;
   }
   .p_14 {
+    width: 100%;
+  }
+  .input_15 {
+    width: 100%;
+  }
+  .p_16 {
+    width: 100%;
+  }
+  .div_17 {
+    width: 100%;
+  }
+  .p_18 {
+    width: 100%;
+  }
+  .input_19 {
+    width: 100%;
+  }
+  .div_20 {
+    width: 100%;
+  }
+  .checkbox_21 {
+  }
+  .button_22 {
+    width: 100%;
+  }
+  .p_23 {
     width: 100%;
   }
 }
@@ -326,52 +559,83 @@
   .div_0 {
     width: 100%;
   }
-  .p_1 {
-    width: 100%;
-    font-size: 18px;
+  .img_1 {
   }
-  .div_2 {
+  .navbar_2 {
     width: 100%;
   }
   .p_3 {
     width: 100%;
-    font-size: 28.8px;
+    font-size: 18px;
   }
-  .div_4 {
+  .p_4 {
     width: 100%;
+    font-size: 14.4px;
   }
   .p_5 {
     width: 100%;
-    font-size: 12.6px;
+    font-size: 14.4px;
   }
-  .input_6 {
+  .p_6 {
     width: 100%;
-    font-size: 12.6px;
+    font-size: 14.4px;
   }
-  .p_7 {
+  .button_7 {
     width: 100%;
-    font-size: 12.6px;
   }
-  .div_8 {
+  .p_8 {
     width: 100%;
+    font-size: 13.5px;
   }
   .p_9 {
     width: 100%;
-    font-size: 12.6px;
+    font-size: 18px;
   }
-  .input_10 {
+  .hr_10 {
     width: 100%;
-    font-size: 12.6px;
   }
   .div_11 {
     width: 100%;
   }
-  .checkbox_12 {
+  .p_12 {
+    width: 100%;
+    font-size: 28.8px;
   }
-  .button_13 {
+  .div_13 {
     width: 100%;
   }
   .p_14 {
+    width: 100%;
+    font-size: 12.6px;
+  }
+  .input_15 {
+    width: 100%;
+    font-size: 12.6px;
+  }
+  .p_16 {
+    width: 100%;
+    font-size: 12.6px;
+  }
+  .div_17 {
+    width: 100%;
+  }
+  .p_18 {
+    width: 100%;
+    font-size: 12.6px;
+  }
+  .input_19 {
+    width: 100%;
+    font-size: 12.6px;
+  }
+  .div_20 {
+    width: 100%;
+  }
+  .checkbox_21 {
+  }
+  .button_22 {
+    width: 100%;
+  }
+  .p_23 {
     width: 100%;
     font-size: 21.6px;
   }

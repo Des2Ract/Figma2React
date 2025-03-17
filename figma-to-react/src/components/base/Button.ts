@@ -16,6 +16,11 @@ export class Button extends BaseComponent {
 
   getStyles(): Record<string, string> {
     const commonStyles = this.getCommonStyles();
+
+    commonStyles.position = "undefined";
+    commonStyles.left = "undefined";
+    commonStyles.top = "undefined";
+
     const node = this.data.node as ShapeNode;
 
     // Parse background styles
@@ -23,6 +28,11 @@ export class Button extends BaseComponent {
 
     // Parse border styles
     const borderStyles = parseStrokeStyles(node.strokes || []);
+
+    // Get border width, style and color from strokes
+    const enhancedBorderStyles = this.getEnhancedBorderStyles(
+      node.strokes || []
+    );
 
     // Parse border radius
     const borderRadius = this.getBorderRadius(node);
@@ -38,9 +48,10 @@ export class Button extends BaseComponent {
       alignItems: "center",
       justifyContent: "center",
       padding: "0",
-      border: "0",
-      // Add default styles if no specific styles are provided
-      ...(!Object.keys(borderStyles).length
+      // Only add default border if no border styles are provided
+      // We're now handling border separately, so remove the default border setting
+      ...(!Object.keys(enhancedBorderStyles).length &&
+      !Object.keys(borderStyles).length
         ? { border: "1px solid #ccc" }
         : {}),
       ...(!Object.keys(backgroundStyles).length
@@ -52,9 +63,39 @@ export class Button extends BaseComponent {
       ...commonStyles,
       ...backgroundStyles,
       ...borderStyles,
+      ...enhancedBorderStyles,
       ...borderRadius,
       ...marginStyles,
       ...buttonStyles,
+    };
+  }
+
+  private getEnhancedBorderStyles(strokes: any[]): Record<string, string> {
+    if (!strokes || strokes.length === 0) {
+      return {};
+    }
+
+    // Get the first stroke (assuming it's the primary one)
+    const stroke = strokes[0];
+
+    if (!stroke || stroke.type !== "SOLID") {
+      return {};
+    }
+
+    // Get the color from the stroke
+    const color = stroke.color;
+    const borderColor = `rgba(${Math.round(color.r * 255)}, ${Math.round(
+      color.g * 255
+    )}, ${Math.round(color.b * 255)}, ${color.a})`;
+
+    // Get the stroke weight if available, otherwise default to 1px
+    const strokeWeight = stroke.strokeWeight || 1;
+
+    // Return the enhanced border styles
+    return {
+      borderWidth: `${strokeWeight}px`,
+      borderStyle: "solid",
+      borderColor: borderColor,
     };
   }
 

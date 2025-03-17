@@ -85,10 +85,25 @@ export class Input extends BaseComponent {
   }
 
   private getPlaceholder(): string {
-    // In a real implementation, this would extract placeholder text from node properties
-    // or check for text children that serve as placeholders
+    // Check if the input node has children
+    if (this.data.children && this.data.children.length > 0) {
+      // Look for paragraph nodes in the children
+      const paragraphNodes = this.data.children.filter(
+        (child) => child.node && child.node.type === "TEXT"
+      );
 
-    // For now, we'll just return an empty string
+      if (paragraphNodes.length > 0) {
+        // Extract text content from the first paragraph node
+        // This assumes the paragraph node has a 'text' or 'characters' property
+        const firstParagraph = paragraphNodes[0];
+
+        if (firstParagraph.node.characters) {
+          return firstParagraph.node.characters;
+        }
+      }
+    }
+
+    // Return empty string if no paragraph nodes found or no text content
     return "";
   }
 }

@@ -54,10 +54,13 @@ export interface TextNode extends NodeBase {
   fontSize: number;
   fontName: FontName;
   textAlignHorizontal: string;
+  fills?: Fill[];
 }
 
 export interface LineNode extends NodeBase {
   // Line-specific properties
+  fills?: Fill[];
+  strokes?: Stroke[];
 }
 
 export type Node = ShapeNode | TextNode | LineNode;

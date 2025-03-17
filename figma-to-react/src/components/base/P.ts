@@ -1,5 +1,6 @@
 import { BaseComponent } from "./BaseComponent";
 import { ComponentNode, TextNode } from "../../types/nodeTypes";
+import { parseBackgroundStyles } from "../../utils/styleParser";
 
 export class P extends BaseComponent {
   constructor(data: ComponentNode) {
@@ -15,6 +16,11 @@ export class P extends BaseComponent {
     const commonStyles = this.getCommonStyles();
     commonStyles.width = "undefined";
     commonStyles.height = "undefined";
+    commonStyles.display = "flex";
+
+    commonStyles.position = "undefined";
+    commonStyles.left = "undefined";
+    commonStyles.top = "undefined";
 
     const node = this.data.node as TextNode;
 
@@ -27,10 +33,11 @@ export class P extends BaseComponent {
       fontWeight: this.getFontWeight(node.fontName.style),
       fontStyle: this.getFontStyle(node.fontName.style),
       textAlign: this.getPositionBasedTextAlign(node),
+      justifyContent: this.getPositionBasedTextAlign(node),
       margin: "0",
       padding: "0",
       lineHeight: "1.5",
-      color: "#000000", // Default color if not specified
+      color: parseBackgroundStyles(node.fills || [])["backgroundColor"],
       whiteSpace: "pre-wrap",
     };
 

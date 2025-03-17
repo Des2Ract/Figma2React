@@ -6,6 +6,9 @@ import { Input } from "../components/base/Input";
 import { Body } from "../components/base/Body";
 import { CSSGenerator } from "./cssGenerator";
 import { Checkbox } from "../components/base/Checkbox"; // Added import
+import { Navbar } from "../components/base/Navbar";
+import { Hr } from "../components/base/Hr";
+import { Image } from "../components/base/Img";
 
 export function createComponent(
   data: ComponentNode,
@@ -23,6 +26,12 @@ export function createComponent(
       return new Input(data);
     case "CHECKBOX":
       return new Checkbox(data, dataLabel);
+    case "NAVBAR":
+      return new Navbar(data, cssGenerator);
+    case "HR":
+      return new Hr(data);
+    case "IMG":
+      return new Image(data);
     // Add other component types as needed
     default:
       console.warn(`Unknown component tag: ${data.tag}. Falling back to Div.`);
