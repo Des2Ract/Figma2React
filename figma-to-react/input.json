@@ -1,0 +1,431 @@
+{
+  "tag": "DIV",
+  "node": {
+    "type": "FRAME",
+    "flexDirection": "column",
+    "x": 0.0,
+    "y": 0.0,
+    "width": 668.0,
+    "height": 579.0,
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.95,
+          "g": 0.95,
+          "b": 0.95,
+          "a": 1.0
+        }
+      }
+    ],
+    "topLeftRadius": 0,
+    "topRightRadius": 0,
+    "bottomLeftRadius": 0,
+    "bottomRightRadius": 0
+  },
+  "children": [
+    {
+      "tag": "P",
+      "node": {
+        "flexDirection": "column",
+        "type": "TEXT",
+        "x": 50.0,
+        "y": 72.0,
+        "width": 127.0,
+        "height": 29.0,
+        "characters": "AOZ Website",
+        "fontSize": 20.0,
+        "fontName": {
+          "family": "Permanent Marker",
+          "style": "Regular"
+        },
+        "textAlignHorizontal": "LEFT"
+      },
+      "children": []
+    },
+    {
+      "tag": "DIV",
+      "node": {
+        "flexDirection": "column",
+
+        "type": "FRAME",
+        "x": 128.0,
+        "y": 110.0,
+        "width": 410.0,
+        "height": 396.0,
+        "fills": [
+          {
+            "opacity": 0.23999999463558197,
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.9,
+              "g": 0.9,
+              "b": 0.9,
+              "a": 1.0
+            }
+          }
+        ],
+        "topLeftRadius": 0,
+        "topRightRadius": 0,
+        "bottomLeftRadius": 0,
+        "bottomRightRadius": 0
+      },
+      "children": [
+        {
+          "tag": "P",
+          "node": {
+            "flexDirection": "column",
+
+            "type": "TEXT",
+            "x": 265.0,
+            "y": 136.0,
+            "width": 135.0,
+            "height": 41.0,
+            "characters": "Sign in",
+            "fontSize": 32.0,
+            "fontName": {
+              "family": "Kode Mono",
+              "style": "SemiBold"
+            },
+            "textAlignHorizontal": "LEFT"
+          },
+          "children": []
+        },
+        {
+          "tag": "DIV",
+          "node": {
+            "flexDirection": "column",
+
+            "type": "GROUP",
+            "x": 193.0,
+            "y": 198.0,
+            "width": 279.0,
+            "height": 60.0,
+            "backgrounds": [],
+            "effects": []
+          },
+          "children": [
+            {
+              "tag": "P",
+              "node": {
+                "flexDirection": "column",
+
+                "type": "TEXT",
+                "x": 198.0,
+                "y": 198.0,
+                "width": 68.0,
+                "height": 18.0,
+                "characters": "UserName",
+                "fontSize": 14.0,
+                "fontName": {
+                  "family": "Kode Mono",
+                  "style": "SemiBold"
+                },
+                "textAlignHorizontal": "LEFT"
+              },
+              "children": []
+            },
+            {
+              "tag": "INPUT",
+              "node": {
+                "flexDirection": "column",
+
+                "type": "RECTANGLE",
+                "x": 193.0,
+                "y": 219.0,
+                "width": 279.0,
+                "height": 39.0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "bottomLeftRadius": 10.0,
+                "bottomRightRadius": 10.0,
+                "strokes": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 1.0
+                    }
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "tag": "P",
+                  "node": {
+                    "flexDirection": "column",
+
+                    "type": "TEXT",
+                    "x": 203.0,
+                    "y": 230.0,
+                    "width": 93.0,
+                    "height": 18.0,
+                    "characters": "eg. AOZ2025",
+                    "fontSize": 14.0,
+                    "fontName": {
+                      "family": "Kode Mono",
+                      "style": "SemiBold"
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.5487722754478455,
+                          "g": 0.5343995690345764,
+                          "b": 0.5343995690345764,
+                          "a": 1.0
+                        }
+                      }
+                    ],
+                    "textAlignHorizontal": "LEFT"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "node": {
+            "flexDirection": "column",
+
+            "type": "GROUP",
+            "x": 193.0,
+            "y": 299.0,
+            "width": 279.0,
+            "height": 60.0,
+            "backgrounds": [],
+            "effects": []
+          },
+          "children": [
+            {
+              "tag": "P",
+              "node": {
+                "flexDirection": "column",
+
+                "type": "TEXT",
+                "x": 198.0,
+                "y": 299.0,
+                "width": 68.0,
+                "height": 18.0,
+                "characters": "Password",
+                "fontSize": 14.0,
+                "fontName": {
+                  "family": "Kode Mono",
+                  "style": "SemiBold"
+                },
+                "textAlignHorizontal": "LEFT"
+              },
+              "children": []
+            },
+            {
+              "tag": "INPUT",
+              "node": {
+                "flexDirection": "column",
+
+                "type": "RECTANGLE",
+                "x": 193.0,
+                "y": 320.0,
+                "width": 279.0,
+                "height": 39.0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1.0,
+                      "g": 1.0,
+                      "b": 1.0,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "bottomLeftRadius": 10.0,
+                "bottomRightRadius": 10.0,
+                "strokes": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 1.0
+                    }
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "node": {
+            "type": "GROUP",
+            "x": 205.0,
+            "y": 387.0,
+            "width": 262.0,
+            "height": 15.0,
+            "backgrounds": [],
+            "effects": []
+          },
+          "children": [
+            {
+              "tag": "CHECKBOX",
+              "node": {
+                "type": "RECTANGLE",
+                "x": 205.0,
+                "y": 387.0,
+                "width": 15.0,
+                "height": 15.0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509804010391235,
+                      "g": 0.8509804010391235,
+                      "b": 0.8509804010391235,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "topLeftRadius": 0,
+                "topRightRadius": 0,
+                "bottomLeftRadius": 0,
+                "bottomRightRadius": 0,
+                "strokes": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 1.0
+                    }
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "tag": "P",
+              "node": {
+                "type": "TEXT",
+                "x": 229.0,
+                "y": 387.0,
+                "width": 238.0,
+                "height": 15.0,
+                "characters": "Agree to the Terms and Conditions",
+                "fontSize": 12.0,
+                "fontName": {
+                  "family": "Kode Mono",
+                  "style": "SemiBold"
+                },
+                "textAlignHorizontal": "LEFT"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "tag": "BUTTON",
+          "node": {
+            "flexDirection": "column",
+
+            "type": "RECTANGLE",
+            "x": 220.0,
+            "y": 421.0,
+            "width": 226.0,
+            "height": 52.0,
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.6745098233222961,
+                  "g": 0.6941176652908325,
+                  "b": 0.8941176533699036,
+                  "a": 1.0
+                }
+              }
+            ],
+            "topLeftRadius": 15.0,
+            "topRightRadius": 15.0,
+            "bottomLeftRadius": 15.0,
+            "bottomRightRadius": 15.0,
+            "strokes": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 1.0
+                }
+              }
+            ]
+          },
+          "children": [
+            {
+              "tag": "P",
+              "node": {
+                "flexDirection": "column",
+
+                "type": "TEXT",
+                "x": 282.0,
+                "y": 431.0,
+                "width": 101.0,
+                "height": 31.0,
+                "characters": "Sign In",
+                "fontSize": 24.0,
+                "fontName": {
+                  "family": "Kode Mono",
+                  "style": "SemiBold"
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 1.0
+                    }
+                  }
+                ],
+                "textAlignHorizontal": "LEFT"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
