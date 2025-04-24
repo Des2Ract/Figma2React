@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Global CSS reset for a responsive layout
 const GlobalStyles = () => (
   <style>
     {`
@@ -9,16 +8,83 @@ const GlobalStyles = () => (
         padding: 0;
         width: 100%;
         overflow-x: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      /* Improved text handling */
+      .text-node {
+        display: block;
+        white-space: pre-line;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+        padding-left: 4px;
+        margin: 2px 0;
+        line-height: 1.4;
+        text-align: left;
+        hyphens: none;
+      }
+
+      .button .text-node {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 0;
+        margin: 0;
+        display: inline;
+      }
+
+      /* Component-specific styles */
+      .navbar {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      .button {
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s;
+        overflow: hidden;
+      }
+
+      .input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 1.5rem;
       }
     `}
   </style>
 );
 
-// Mapping from Figma tags to HTML elements
 const ComponentMap = {
   HTML: 'html',
   HEAD: 'head',
-  BODY: 'body', // We'll skip rendering the root BODY node.
+  BODY: 'body',
   DIV: 'div',
   HEADER: 'header',
   FOOTER: 'footer',
@@ -55,22 +121,31 @@ const ComponentMap = {
   FIGCAPTION: 'figcaption',
   DETAILS: 'details',
   SUMMARY: 'summary',
-  TXT: 'span', // Custom mapping for text nodes
+  TXT: 'span',
 };
 
-// Convert a Figma fill object to an rgba() color string.
+const tagClassMap = {
+  NAV: 'navbar',
+  UL: 'nav-list',
+  LI: 'nav-item',
+  BUTTON: 'button',
+  A: 'link',
+  INPUT: 'input',
+  FORM: 'form',
+  SECTION: 'card',
+};
+
 const getColorFromFill = (fill) => {
-  if (fill && fill.type === 'SOLID' && fill.color) {
+  if (fill?.type === 'SOLID' && fill.color) {
     const { r, g, b } = fill.color;
-    const opacity = fill.opacity !== undefined ? fill.opacity : 1;
+    const opacity = fill.opacity ?? 1;
     return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${opacity})`;
   }
   return null;
 };
 
-// Generate inline styles from Figma node data.
 const getStyleFromNode = (nodeData, isText = false) => {
-  let style = {
+  const style = {
     position: 'absolute',
     left: nodeData.x || 0,
     top: nodeData.y || 0,
@@ -79,172 +154,132 @@ const getStyleFromNode = (nodeData, isText = false) => {
     boxSizing: 'border-box',
   };
 
-  // Border radius
-  if (
-    nodeData.topLeftRadius !== undefined ||
+  if (isText) {
+    style.whiteSpace = 'pre-line';
+    style.wordBreak = 'normal';
+    style.hyphens = 'none';
+    style.overflowWrap = 'break-word';
+  }
+
+  if (nodeData.topLeftRadius !== undefined ||
     nodeData.topRightRadius !== undefined ||
     nodeData.bottomLeftRadius !== undefined ||
-    nodeData.bottomRightRadius !== undefined
-  ) {
-    style.borderTopLeftRadius = nodeData.topLeftRadius || 0;
-    style.borderTopRightRadius = nodeData.topRightRadius || 0;
-    style.borderBottomLeftRadius = nodeData.bottomLeftRadius || 0;
-    style.borderBottomRightRadius = nodeData.bottomRightRadius || 0;
+    nodeData.bottomRightRadius !== undefined) {
+    style.borderRadius = `${nodeData.topLeftRadius || 0}px ${nodeData.topRightRadius || 0}px ${nodeData.bottomRightRadius || 0}px ${nodeData.bottomLeftRadius || 0}px`;
   }
 
-  // Fills / backgrounds
-  if (nodeData.fills && nodeData.fills.length > 0) {
-    if (isText || nodeData.type === 'TEXT' || nodeData.characters) {
-      const textColor = getColorFromFill(nodeData.fills[0]);
-      if (textColor) {
-        style.color = textColor;
-      }
-    } else {
-      const bgColor = getColorFromFill(nodeData.fills[0]);
-      if (bgColor) {
-        style.backgroundColor = bgColor;
-      }
-    }
-  } else if (nodeData.backgrounds && nodeData.backgrounds.length > 0) {
-    const bgFill = nodeData.backgrounds[0];
-    if (bgFill && bgFill.type === 'SOLID' && bgFill.color && bgFill.visible !== false) {
-      style.backgroundColor = `rgba(${Math.round(bgFill.color.r * 255)}, ${Math.round(
-        bgFill.color.g * 255
-      )}, ${Math.round(bgFill.color.b * 255)}, ${bgFill.opacity !== undefined ? bgFill.opacity : 1})`;
+  if (nodeData.fills?.[0]) {
+    const color = getColorFromFill(nodeData.fills[0]);
+    if (color) {
+      if (isText) style.color = color;
+      else style.backgroundColor = color;
     }
   }
 
-  // Text properties
   if (nodeData.fontSize) style.fontSize = nodeData.fontSize;
-  if (nodeData.fontName && nodeData.fontName.family) style.fontFamily = nodeData.fontName.family;
+  if (nodeData.fontName?.family) style.fontFamily = nodeData.fontName.family;
   if (nodeData.fontWeight) style.fontWeight = nodeData.fontWeight;
   if (nodeData.textAlignHorizontal) style.textAlign = nodeData.textAlignHorizontal.toLowerCase();
   if (nodeData.textDecoration) style.textDecoration = nodeData.textDecoration.toLowerCase();
 
-  // Stroke (borders)
-  if (nodeData.strokes && nodeData.strokes.length > 0) {
+  if (nodeData.strokes?.[0]) {
     const strokeColor = getColorFromFill(nodeData.strokes[0]);
     if (strokeColor) {
       style.border = `${nodeData.strokeWeight || 1}px solid ${strokeColor}`;
-      if (nodeData.dashPattern && nodeData.dashPattern.length > 0) {
-        style.borderStyle = 'dashed';
-      }
+      if (nodeData.dashPattern?.length) style.borderStyle = 'dashed';
     }
   }
 
-  // Effects (e.g., drop shadow)
-  if (nodeData.effects && nodeData.effects.length > 0) {
-    const shadow = nodeData.effects.find((effect) => effect.type === 'DROP_SHADOW');
-    if (shadow && shadow.offset && shadow.radius !== undefined && shadow.color) {
-      const { x: offsetX, y: offsetY } = shadow.offset;
-      const blur = shadow.radius;
-      const shadowColor = getColorFromFill(shadow.color);
-      style.boxShadow = `${offsetX}px ${offsetY}px ${blur}px ${shadowColor}`;
+  if (nodeData.effects?.length) {
+    const shadow = nodeData.effects.find(e => e.type === 'DROP_SHADOW');
+    if (shadow) {
+      style.boxShadow = `${shadow.offset.x}px ${shadow.offset.y}px ${shadow.radius}px ${getColorFromFill(shadow.color)}`;
     }
   }
 
   return style;
 };
 
-// Extract extra HTML attributes based on the Figma node data.
 const getAttributesForNode = (tag, nodeData) => {
   const attributes = {};
   switch (tag) {
     case 'A':
-      if (nodeData.linkUnfurlData?.url) attributes.href = nodeData.linkUnfurlData.url;
+      attributes.href = nodeData.linkUnfurlData?.url || '#';
       break;
     case 'IMG':
-      if (nodeData.fills && nodeData.fills[0]?.url) {
-        attributes.src = nodeData.fills[0].url;
-      } else if (nodeData.backgrounds && nodeData.backgrounds[0]?.url) {
-        attributes.src = nodeData.backgrounds[0].url;
-      }
+      attributes.src = nodeData.fills?.[0]?.url || nodeData.backgrounds?.[0]?.url || '';
       attributes.alt = nodeData.alt || '';
       break;
-    case 'IFRAME':
-      if (nodeData.src) attributes.src = nodeData.src;
-      break;
     case 'INPUT':
+      attributes.type = nodeData.inputType || 'text';
       attributes.placeholder = nodeData.placeholder || '';
       attributes.value = nodeData.value || '';
-      attributes.type = nodeData.inputType || 'text';
       if (nodeData.checked !== undefined) attributes.checked = nodeData.checked;
       break;
     case 'FORM':
-      attributes.action = nodeData.action || '';
+      attributes.action = nodeData.action || '#';
       attributes.method = nodeData.method || 'get';
       break;
-      case "VIDEO":
-        if (
-          nodeData.fills &&
-          nodeData.fills.length > 0 &&
-          nodeData.fills[0].url
-        ) {
-          attributes.src = nodeData.fills[0].url;
-        }
-        attributes.controls = true;
-        break;
+    case 'VIDEO':
     case 'AUDIO':
-      if (nodeData.src) attributes.src = nodeData.src;
       attributes.controls = true;
-      break;
-    default:
+      attributes.src = nodeData.fills?.[0]?.url || '';
       break;
   }
   return attributes;
 };
 
-const selfClosingTags = ['IMG', 'INPUT', 'META', 'LINK', 'BR'];
+const selfClosingTags = ['IMG', 'INPUT', 'BR'];
 
-// Recursive renderer for the Figma JSON tree.
-// If the root node is a "BODY" node, we skip rendering it to avoid injecting fixed dimensions.
 const FigmaRenderer = ({ node, parentOffsetX = 0, parentOffsetY = 0 }) => {
   if (!node) return null;
   const { tag, node: nodeData, children = [] } = node;
 
-  // Skip the root BODY node—render its children directly.
-  if (parentOffsetX === 0 && parentOffsetY === 0 && tag === 'BODY') {
-    return children.map((child, index) => (
-      <FigmaRenderer key={index} node={child} parentOffsetX={0} parentOffsetY={0} />
+  if (tag === 'BODY' && parentOffsetX === 0 && parentOffsetY === 0) {
+    return children.map((child, i) => (
+      <FigmaRenderer key={i} node={child} parentOffsetX={0} parentOffsetY={0} />
     ));
   }
 
   const Component = ComponentMap[tag] || 'div';
-
-  // Compute position relative to the parent's offset.
-  const relativeX = (nodeData.x || 0) - parentOffsetX;
-  const relativeY = (nodeData.y || 0) - parentOffsetY;
-
-  const isText = tag === 'TXT' || nodeData.type === 'TEXT' || !!nodeData.characters;
-  let style = getStyleFromNode(nodeData, isText);
-
-  // Ensure integer pixel values.
-  style.left = Math.round(relativeX);
-  style.top = Math.round(relativeY);
-  style.width = Math.round(nodeData.width);
-  style.height = Math.round(nodeData.height);
-
   const attributes = getAttributesForNode(tag, nodeData);
+  const defaultClass = tagClassMap[tag] || '';
+  const isText = tag === 'TXT' || !!nodeData.characters;
+  const textClass = isText ? 'text-node' : '';
+  const className = `${defaultClass} ${textClass} ${attributes.className || ''}`.trim();
 
-  // Special handling for SVG nodes: render using dangerouslySetInnerHTML.
+  const style = {
+    ...getStyleFromNode(nodeData, isText),
+    left: Math.round((nodeData.x || 0) - parentOffsetX),
+    top: Math.round((nodeData.y || 0) - parentOffsetY),
+    width: Math.round(nodeData.width) || 'auto',
+    height: Math.round(nodeData.height) || 'auto',
+  };
+
   if (tag === 'SVG' && nodeData.svg) {
-    return (
-      <Component style={style} {...attributes} dangerouslySetInnerHTML={{ __html: nodeData.svg }} />
-    );
+    return <Component className={className} style={style} dangerouslySetInnerHTML={{ __html: nodeData.svg }} />;
   }
 
   if (selfClosingTags.includes(tag)) {
-    return <Component style={style} {...attributes} />;
+    return <Component className={className || undefined} style={style} {...attributes} />;
   }
 
   return (
-    <Component style={style} {...attributes}>
-      {nodeData.characters && typeof nodeData.characters === 'string'
-        ? nodeData.characters
-        : null}
-      {children.map((child, index) => (
+    <Component className={className || undefined} style={style} {...attributes}>
+      {nodeData.characters && (
+        <span className="text-node" style={{ 
+          display: 'block',
+          width: '100%',
+          height: '100%',
+          whiteSpace: 'pre-line',
+          wordBreak: 'normal'
+        }}>
+          {nodeData.characters}
+        </span>
+      )}
+      {children.map((child, i) => (
         <FigmaRenderer
-          key={index}
+          key={i}
           node={child}
           parentOffsetX={nodeData.x || 0}
           parentOffsetY={nodeData.y || 0}
@@ -261,17 +296,16 @@ const App = () => {
 
   useEffect(() => {
     fetch('/figmaData.json')
-      .then((response) => response.json())
-      .then((data) => setFigmaJson(data))
-      .catch((error) => console.error('Error loading JSON:', error));
+      .then(res => res.json())
+      .then(setFigmaJson)
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
     const updateScale = () => {
-      if (containerRef.current && figmaJson && figmaJson.node && figmaJson.node.width) {
+      if (containerRef.current && figmaJson?.node?.width) {
         const containerWidth = containerRef.current.offsetWidth;
-        const designWidth = figmaJson.node.width;
-        setScale(containerWidth / designWidth);
+        setScale(containerWidth / figmaJson.node.width);
       }
     };
     updateScale();
@@ -279,38 +313,27 @@ const App = () => {
     return () => window.removeEventListener('resize', updateScale);
   }, [figmaJson]);
 
-  if (!figmaJson) {
-    return <p>Loading...</p>;
-  }
-
-  const designWidth = figmaJson.node.width;
-  const designHeight = figmaJson.node.height;
-
-  // Outer container: full width, with padding-bottom for aspect ratio.
-  const containerStyle = {
-    position: 'relative',
-    width: '100%',
-    paddingBottom: `${(designHeight / designWidth) * 100}%`,
-    overflow: 'hidden',
-  };
-
-  // Inner wrapper: fixed dimensions, scaled responsively.
-  const innerWrapperStyle = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: designWidth,
-    height: designHeight,
-    transformOrigin: 'top left',
-    transform: `scale(${scale})`,
-  };
+  if (!figmaJson) return <div>Loading design...</div>;
 
   return (
     <>
       <GlobalStyles />
-      <div ref={containerRef} style={containerStyle}>
-        <div style={innerWrapperStyle}>
-          <FigmaRenderer node={figmaJson} parentOffsetX={0} parentOffsetY={0} />
+      <div ref={containerRef} style={{
+        position: 'relative',
+        width: '100%',
+        paddingBottom: `${(figmaJson.node.height / figmaJson.node.width) * 100}%`,
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: figmaJson.node.width,
+          height: figmaJson.node.height,
+          transform: `scale(${scale})`,
+          transformOrigin: 'top left'
+        }}>
+          <FigmaRenderer node={figmaJson} />
         </div>
       </div>
     </>
