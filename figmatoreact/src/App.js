@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import GeneratedComponent from './GeneratedComponent';
 
 const GlobalStyles = () => (
   <style>
@@ -318,22 +319,28 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <div ref={containerRef} style={{
-        position: 'relative',
-        width: '100%',
-        paddingBottom: `${(figmaJson.node.height / figmaJson.node.width) * 100}%`,
-        overflow: 'hidden'
-      }}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: figmaJson.node.width,
-          height: figmaJson.node.height,
-          transform: `scale(${scale})`,
-          transformOrigin: 'top left'
-        }}>
-          <FigmaRenderer node={figmaJson} />
+      <div
+        ref={containerRef}
+        style={{
+          position: 'relative',
+          width: '100%',
+          paddingBottom: `${(figmaJson.node.height / figmaJson.node.width) * 100}%`,
+          overflow: 'hidden'
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: figmaJson.node.width,
+            height: figmaJson.node.height,
+            transform: `scale(${scale})`,
+            transformOrigin: 'top left'
+          }}
+        >
+          {/* ← swap this: */}
+          <GeneratedComponent />
         </div>
       </div>
     </>
