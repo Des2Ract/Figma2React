@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package.json ./
-RUN npm install
+RUN npm install -g npm@11.4.2
 
 # Copy the rest of the app
 COPY . .
