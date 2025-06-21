@@ -1,6 +1,7 @@
 {
   "name": "figmatoreact",
   "version": "0.1.0",
+  "main": "scripts/generate-page.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -8,7 +9,11 @@
     "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
+    "archiver": "^7.0.1",
     "clsx": "^2.1.1",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "multer": "^2.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
